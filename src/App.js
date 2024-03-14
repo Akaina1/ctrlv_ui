@@ -17,11 +17,16 @@ import SimpleToggleBox from './components/Toggles/SimpleToggleBox';
 function App() {
   //States Required
   const [showNotification, setShowNotification] = useState(false); // for notifications
-  const [toggleState, setToggleState] = useState(false); //for simple toggle box
+  const [toggleState, setToggleState] = useState(true); //for simple toggle box
   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Simple Toggle Box Logic
-const handleSimpleToggleBox = (newState) => {
+const handleSimpleToggleBox1 = (newState) => {
+  setToggleState(newState);
+};
+
+// for multiple toggles
+const handleSimpleToggleBox2 = (newState) => {
   setToggleState(newState);
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -254,12 +259,24 @@ useEffect(() => {
           {/* Simple Toggle Box */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Toggle Box</header>
-            <div className="flex w-full h-full items-center justify-center">
+            <div className="flex flex-col w-full h-full items-center justify-center">
               <SimpleToggleBox
-                onToggle={handleSimpleToggleBox}
+                onToggle={handleSimpleToggleBox1}
                 initialState={toggleState}
-                onLabel="Don't you"
-                offLabel="love toggles?"
+                onLabel="Don't you hate when"
+                offLabel="Wait a minute, where's my sandwich?"
+                containerBackgroundColor="#EED6D3"
+                containerBorderColor="black"
+                toggleBackgroundColor="#67595E"
+                toggleOffColor='white'
+                toggleOnColor='white'
+              />
+
+              <SimpleToggleBox
+                onToggle={handleSimpleToggleBox2}
+                initialState={toggleState}
+                onLabel="Your pet turtle eats your sandwiches?"
+                offLabel="Are you a turtle?"
                 containerBackgroundColor="#EED6D3"
                 containerBorderColor="black"
                 toggleBackgroundColor="#67595E"
