@@ -258,14 +258,22 @@ useEffect(() => {
               <SimpleToggleBox
                 onToggle={handleSimpleToggleBox}
                 initialState={toggleState}
-                onLabel="On"
-                offLabel="Off"
-                containerBackgroundColor="#fff5bd"
+                onLabel="Don't you"
+                offLabel="love toggles?"
+                containerBackgroundColor="#EED6D3"
                 containerBorderColor="black"
-                toggleBackgroundColor="#69284c"
-              />
-              {toggleState && <div>Toggle is on</div>}
-              {!toggleState && <div>Toggle is off</div>}            
+                toggleBackgroundColor="#67595E"
+                toggleOffColor='white'
+                toggleOnColor='white'
+              />       
+           </div>
+          </div>
+
+          {/* Test Component # */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              <p> Test </p>            
            </div>
           </div>
 
