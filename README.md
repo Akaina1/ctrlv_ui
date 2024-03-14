@@ -10,7 +10,7 @@ Instructions on how to install and set up the project locally.
 
 ```bash
 # Clone the repository
-$ git clone https://github.com//your username/ctrlv_ui
+$ git clone https://github.com//your_username/ctrlv_ui
 
 # Navigate to the project directory
 $ cd project
