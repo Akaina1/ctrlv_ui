@@ -11,11 +11,19 @@ import SimpleCard from './components/Cards/SimpleCard';
 import SimpleCardContainer from './components/Containers/SimpleCardContainer';
 import SimpleAccordion from './components/Accordion/SimpleAccordion';
 import SimpleNotification from './components/Alerts-Notifications/SimpleNotification';
+import SimpleToggleBox from './components/Toggles/SimpleToggleBox';
 
 
 function App() {
   //States Required
-  const [showNotification, setShowNotification] = useState(false); // for notifications  
+  const [showNotification, setShowNotification] = useState(false); // for notifications
+  const [toggleState, setToggleState] = useState(false); //for simple toggle box
+  
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Simple Toggle Box Logic
+const handleSimpleToggleBox = (newState) => {
+  setToggleState(newState);
+};
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Simple Button Logic
   const SimpleButtonClick = () => {
@@ -243,12 +251,22 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* Test Component 9 */}
+          {/* Simple Toggle Box */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Test Component 9</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Toggle Box</header>
             <div className="flex w-full h-full items-center justify-center">
-              <p>Test</p> 
-            </div>
+              <SimpleToggleBox
+                onToggle={handleSimpleToggleBox}
+                initialState={toggleState}
+                onLabel="On"
+                offLabel="Off"
+                containerBackgroundColor="#fff5bd"
+                containerBorderColor="black"
+                toggleBackgroundColor="#69284c"
+              />
+              {toggleState && <div>Toggle is on</div>}
+              {!toggleState && <div>Toggle is off</div>}            
+           </div>
           </div>
 
         </div>
