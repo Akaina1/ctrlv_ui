@@ -1,0 +1,110 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');                       /* Julius Sans One */
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');                              /* Michroma */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');                               /* Aldrich */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');     /* Rajdhani */
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');        /* Darker Grotesque */
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');                    /* Major Mono Display */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom styles for fonts that fit theme, use as needed or import your own */
+.font-julius-sans-one {
+    font-family: 'Julius Sans One', sans-serif;
+  }
+  
+  .font-michroma {
+    font-family: 'Michroma', sans-serif;
+  }
+  
+  .font-aldrich {
+    font-family: 'Aldrich', sans-serif;
+  }
+  
+  .font-rajdhani {
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  .font-darker-grotesque {
+    font-family: 'Darker Grotesque', sans-serif;
+  }
+  
+  .font-major-mono-display {
+    font-family: 'Major Mono Display', monospace;
+  }
+
+  .shadow-border {
+    box-shadow: 0 0 0 2px black, 0 0 0 4px black, 0 0 0 6px black, 0 0 0 8px black;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Custom scrollbar styles */
+  /* Width of the scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  .scrollbar-track-gray-300::-webkit-scrollbar-track {
+    background: transparent; /* Light gray */
+  }
+
+  /* Handle */
+  .scrollbar-thumb-gray-500::-webkit-scrollbar-thumb {
+    background: #6b7280; /* Dark gray */
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /* Notification */
+  .animate-drop-down {
+    animation: drop-down 0.5s ease-in-out forwards;
+  }
+
+  .animate-drop-up {
+    animation: drop-up 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes drop-down {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
