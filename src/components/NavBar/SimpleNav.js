@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SimpleNav = () => {
-  return (
-    <nav className="border-b-8 border-r-8 border-l-4 border-t-4 border-black bg-[#ffb2ef] p-4 sticky top-0 z-10 w-full">
+const SimpleNav = ({ bgColor, textColor }) => {
+    return (
+    <nav className="border-b-8 border-r-8 border-l-4 border-t-4 border-black p-4 sticky top-0 z-10 w-full"
+    style={{ backgroundColor: bgColor }}>
       <div className="flex flex-col navbar:flex-row items-center justify-between w-full">
 
         {/* Logo (shown on all devices) */}
@@ -15,7 +17,6 @@ const SimpleNav = () => {
         {/* Profile Icon (shown on mobile/tablet, hidden on desktop) */}
         <div className="block navbar:hidden order-1 navbar:order-none">
         <button className="relative 
-                    font-julius-sans-one text-2xl text-black 
                     block navbar:flex items-center mb-4 navbar:mb-0 
                     before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                     before:border-t-2 before:border-black before:transition before:duration-200 
@@ -36,12 +37,13 @@ const SimpleNav = () => {
 
                     {/* Copy + Paste buttons as needed [Remember to change navbar breakpoint in tailwind.config.js for responsive design] */}
                     <button className="relative 
-                        font-julius-sans-one text-2xl text-black 
+                        font-julius-sans-one text-2xl
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 
                         hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 
-                        hover:bg-white hover:bg-opacity-20" 
+                        hover:bg-white hover:bg-opacity-20"
+                        style={{ color: textColor }} 
                         aria-label="Home"
                         onClick={() => {
                             //Your navigation or render logic goes here
@@ -51,12 +53,13 @@ const SimpleNav = () => {
                     </button>
 
                     <button className="relative 
-                        font-julius-sans-one text-2xl text-black 
+                        font-julius-sans-one text-2xl
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 
                         hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 
-                        hover:bg-white hover:bg-opacity-20" 
+                        hover:bg-white hover:bg-opacity-20"
+                        style={{ color: textColor }} 
                         aria-label="About"
                         onClick={() => {
                             //Your navigation or render logic goes here
@@ -66,12 +69,13 @@ const SimpleNav = () => {
                     </button>
 
                     <button className="relative 
-                        font-julius-sans-one text-2xl text-black 
+                        font-julius-sans-one text-2xl
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 
                         hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 
-                        hover:bg-white hover:bg-opacity-20" 
+                        hover:bg-white hover:bg-opacity-20"
+                        style={{ color: textColor }} 
                         aria-label="Services"
                         onClick={() => {
                             //Your navigation or render logic goes here
@@ -81,12 +85,13 @@ const SimpleNav = () => {
                     </button>
 
                     <button className="relative 
-                        font-julius-sans-one text-2xl text-black 
+                        font-julius-sans-one text-2xl
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 
                         hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 
-                        hover:bg-white hover:bg-opacity-20" 
+                        hover:bg-white hover:bg-opacity-20"
+                        style={{ color: textColor }} 
                         aria-label="Contact"
                         onClick={() => {
                             //Your navigation or render logic goes here
@@ -101,7 +106,6 @@ const SimpleNav = () => {
         {/* Profile Icon (hidden on mobile/tablet, shown on desktop) */}
         <div className="hidden navbar:block">
             <button className="relative 
-                    font-julius-sans-one text-2xl text-black 
                     block navbar:flex items-center mb-4 navbar:mb-0 
                     before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                     before:border-t-2 before:border-black before:transition before:duration-200 
@@ -118,5 +122,10 @@ const SimpleNav = () => {
     </nav>
   );
 };
+
+SimpleNav.propTypes = {
+    bgColor: PropTypes.string.isRequired,
+    textColor: PropTypes.string.isRequired,
+  };
 
 export default SimpleNav;
