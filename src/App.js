@@ -14,6 +14,7 @@ import SimpleNotification from './components/Alerts-Notifications/SimpleNotifica
 import SimpleToggleBox from './components/Toggles/SimpleToggleBox';
 import SimpleAlert from './components/Alerts-Notifications/SimpleAlert';
 import SimpleScrollContainer from './components/Containers/SimpleScrollContainer';
+import ProfileIcon from './components/Icons/ProfileIcon';
 
 
 function App() {
@@ -82,6 +83,14 @@ useEffect(() => {
 }, [showNotification]);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Profile Icon Logic
+
+const handleProfileClick = () => {
+  // Logic to handle profile icon click
+  console.log('Profile icon clicked');
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <div className="App bg-gray-700 flex flex-col min-h-screen min-w-screen overflow-y-auto items-center">
       {/* Header Bar */}
@@ -113,6 +122,7 @@ useEffect(() => {
                   href=""
                   onClick={SimpleButtonClick}
                   bgColor='#69D2E7'
+                  textColor='black'
                 >
                   Button
                 </SimpleButton>            
@@ -248,7 +258,8 @@ useEffect(() => {
               <SimpleButton
                 buttonLabel="Show Notification"
                 onClick={NotificationClick}
-                bgColor="#69D2E7"
+                bgColor="#122620"
+                textColor="white"
                 >
                 Show Notification
               </SimpleButton>
@@ -292,7 +303,7 @@ useEffect(() => {
                 containerBackgroundColor="#EED6D3"
                 containerBorderColor="black"
                 toggleBackgroundColor="#67595E"
-                toggleOffColor='white'
+                toggleOffColor='red'
                 toggleOnColor='white'
               />
 
@@ -304,7 +315,7 @@ useEffect(() => {
                 containerBackgroundColor="#EED6D3"
                 containerBorderColor="black"
                 toggleBackgroundColor="#67595E"
-                toggleOffColor='white'
+                toggleOffColor='red'
                 toggleOnColor='white'
               />       
            </div>
@@ -316,7 +327,7 @@ useEffect(() => {
             <div className="flex w-full h-full items-center justify-center">
 
            {/* Call with a button */}
-            <button className='mr-6 border-2 border-black p-0'
+            <button className='mr-6 border-2 border-black p-4'
             onClick={() => setShowAlert(true)}>Show Alert</button>
             {showAlert && (
               <SimpleAlert
@@ -336,7 +347,8 @@ useEffect(() => {
             <SimpleButton
                 buttonLabel="Show Alert"
                 onClick={() => setShowAlert(true)}
-                bgColor="#69D2E7"
+                bgColor="#BBE7FE"
+                textColor='#003060'
                 >
                 Show Alert
               </SimpleButton>
@@ -369,11 +381,11 @@ useEffect(() => {
             </div>
           </div>
 
-          {/* title */}
+          {/* Profile Icon */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Profile Icon</header>
             <div className="flex w-full h-full items-center justify-center">
-              <p>test</p>
+              <ProfileIcon onClick={handleProfileClick} />
             </div>
           </div>
 

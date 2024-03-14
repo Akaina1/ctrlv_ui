@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SimpleButton = ({ children, onClick, buttonLabel, href, bgColor }) => {
+const SimpleButton = ({ children, onClick, buttonLabel, href, bgColor, textColor }) => {
   const handleClick = (event) => {
     event.preventDefault();
     if (onClick) {
@@ -19,7 +19,7 @@ const SimpleButton = ({ children, onClick, buttonLabel, href, bgColor }) => {
       hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 hover:brightness-110"
       onClick={handleClick}
       aria-label={buttonLabel}
-      style={{ backgroundColor: bgColor }}
+      style={{ backgroundColor: bgColor, color: textColor }}
     >
     {children}
     </a>
@@ -32,6 +32,7 @@ SimpleButton.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
   href: PropTypes.string,
   bgColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string.isRequired,
 };
 
 export default SimpleButton;

@@ -57,13 +57,13 @@ const SimpleToggleBox = ({
         <div className="ml-2">
           {isToggled && (
             <div className="font-bold whitespace-nowrap font-julius-sans-one text-md"
-            style={{ Color: toggleOnColor }}>
+            style={{ color: toggleOnColor }}>
               {onLabel}
             </div>
           )}
           {!isToggled && (
             <div className="font-bold whitespace-nowrap font-julius-sans-one text-md"
-            style={{ Color: toggleOffColor }}>
+            style={{ color: toggleOffColor }}>
             {offLabel}
             </div>
           )}
