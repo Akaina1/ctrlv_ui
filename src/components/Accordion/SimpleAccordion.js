@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
 
-  // Define the accordion items array within component or use external file for larger data sets
+  // Define the items array within component or use external file for larger data sets, then include as props
   const items = [
     {
       header: "This is a header you can click on!",

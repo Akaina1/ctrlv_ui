@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SimpleScrollContainer = ({ title, bgColor }) => {
+const SimpleScrollContainer = ({ title, bgColor, itemTextColor, titleTextColor }) => {
 
-  // Define the items array within component or use external file for larger data sets
+  // Define the items array within component or use external file for larger data sets, then include as props
   const items = [
     'Item 1',
     'Item 2',
@@ -19,13 +19,20 @@ const SimpleScrollContainer = ({ title, bgColor }) => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 max-w-2xl max-h-96 m-auto border-black border-t-4 border-l-4 border-b-8 border-r-8">
+    <div className="flex flex-col items-center justify-center p-6 max-w-2xl max-h-96 m-auto border-black border-t-4 border-l-4 border-b-8 border-r-8" 
+    style={{ backgroundColor: bgColor }}>
       <div className="flex items-center justify-between w-full mb-4">
-        <div className="text-lg font-medium">{title}</div>
+        <div className="text-lg font-medium"
+        style={{ color: titleTextColor }}
+        >
+        {title}
+        </div>
       </div>
-      <div className={`flex-1 w-full overflow-y-auto scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-500`} style={{ backgroundColor: bgColor }}>
+      <div className={`flex-1 w-full overflow-y-auto scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-500`}>
         {items.map((item, index) => (
-          <div key={index} className="p-4 border-b border-gray-200">
+          <div key={index} className="p-4 border-b border-gray-200"
+          style={{ color: itemTextColor }}
+          >
             {item}
           </div>
         ))}
@@ -37,6 +44,8 @@ const SimpleScrollContainer = ({ title, bgColor }) => {
 SimpleScrollContainer.propTypes = {
   title: PropTypes.string.isRequired,
   bgColor: PropTypes.string,
+  itemTextColor: PropTypes.string,
+  titleTextColor: PropTypes.string,
 };
 
 SimpleScrollContainer.defaultProps = {

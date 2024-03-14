@@ -4,7 +4,7 @@ import SimpleCard from '../Cards/SimpleCard'; // use my Simple card, or place yo
 
 const SimpleCardContainer = ({ header, bgColor }) => {
   
-  // Can define card array here or have a separate file holding it
+  // Define the items array within component or use external file for larger data sets, then include as props
   const cards = [
     { photo: 'https://via.placeholder.com/400x400', title: 'This', description: 'Super Responsive!', button: 'I', bgColor: '#FF7A5C', buttonLabel: "Card Button 1",  onButtonClick: () => { console.log('Button clicked on card 1!');},},
     { photo: 'https://via.placeholder.com/400x400', title: 'Is', description: 'So Simple!', button: 'Really', bgColor: '#A388EE', buttonLabel: "Card Button 2",  onButtonClick: () => { console.log('Button clicked on card 2!');},},

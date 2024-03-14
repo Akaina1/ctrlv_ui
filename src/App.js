@@ -361,7 +361,11 @@ useEffect(() => {
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Scroll Container</header>
             <div className="flex w-full h-full items-center justify-center">
-              <SimpleScrollContainer title="My Scrollable Content" bgColor="pink-200"/>
+              <SimpleScrollContainer title="My Scrollable Content" 
+              bgColor="#D3BBDD"
+              titleTextColor="black"
+              itemTextColor="black"
+              />
             </div>
           </div>
 
