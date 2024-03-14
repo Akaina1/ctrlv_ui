@@ -12,13 +12,23 @@ import SimpleCardContainer from './components/Containers/SimpleCardContainer';
 import SimpleAccordion from './components/Accordion/SimpleAccordion';
 import SimpleNotification from './components/Alerts-Notifications/SimpleNotification';
 import SimpleToggleBox from './components/Toggles/SimpleToggleBox';
+import SimpleAlert from './components/Alerts-Notifications/SimpleAlert';
+import SimpleScrollContainer from './components/Containers/SimpleScrollContainer';
 
 
 function App() {
   //States Required
   const [showNotification, setShowNotification] = useState(false); // for notifications
   const [toggleState, setToggleState] = useState(true); //for simple toggle box
-  
+  const [showAlert, setShowAlert] = useState(false); // for simple Alert
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Alert Logic
+const handleAlert1 = (selectedOption) => {
+  // Do something with the selected option
+  console.log(selectedOption);
+  setShowAlert(false);
+};
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Simple Toggle Box Logic
 const handleSimpleToggleBox1 = (newState) => {
@@ -290,8 +300,109 @@ useEffect(() => {
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Title</header>
             <div className="flex w-full h-full items-center justify-center">
-              <p> Test </p>            
+
+           {/* Call with a button */}
+            <button className='mr-6 border-2 border-black p-0'
+            onClick={() => setShowAlert(true)}>Show Alert</button>
+            {showAlert && (
+              <SimpleAlert
+                bgColor="red"
+                title="Warning"
+                description="Are you sure you want to do this?"
+                options={['Yes', 'No']}
+                onSelect={handleAlert1}
+                titleColor="#EFF1DB"
+                descriptionColor="#EFF1DB"
+                ButtonTextColor="white"
+                ariaLabel="Wow more accessibility features!"
+              />
+            )}
+
+            {/* Call with another component */}
+            <SimpleButton
+                buttonLabel="Show Alert"
+                onClick={() => setShowAlert(true)}
+                bgColor="#69D2E7"
+                >
+                Show Alert
+              </SimpleButton>
+              {showAlert && (
+              <SimpleAlert
+                bgColor="#DB1F48"
+                title="Warning"
+                description="Are you sure you want to do this?"
+                options={['Yes', 'No']}
+                onSelect={handleAlert1}
+                titleColor="#E5DDC8"
+                descriptionColor="#E5DDC8"
+                ButtonTextColor="#E5DDC8"
+                ariaLabel="Wow more accessibility features!"
+              />
+            )}
+
            </div>
+          </div>
+
+          {/* title */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+            <SimpleScrollContainer title="My Scrollable Content" bgColor="pink-200">
+              <div>Content goes here</div>
+              <div>More content goes here</div>
+              <div>Even more content goes here</div>
+              <div>Content goes here</div>
+              <div>More content goes here</div>
+              <div>Even more content goes here</div>
+              <div>Content goes here</div>
+              <div>More content goes here</div>
+              <div>Even more content goes here</div>
+              <div>Content goes here</div>
+              <div>More content goes here</div>
+              <div>Even more content goes here</div>
+              {/* Add more content as needed */}
+            </SimpleScrollContainer>
+            </div>
+          </div>
+
+          {/* title */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              <p>test</p>
+            </div>
+          </div>
+
+          {/* title */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              <p>test</p>
+            </div>
+          </div>
+
+          {/* title */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              <p>test</p>
+            </div>
+          </div>
+
+          {/* title */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              <p>test</p>
+            </div>
+          </div>
+
+          {/* title */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              <p>test</p>
+            </div>
           </div>
 
         </div>

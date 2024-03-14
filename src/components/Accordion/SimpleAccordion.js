@@ -1,3 +1,5 @@
+// March-14-2024: Needs screen reader support on accordion content when shown
+
 import React, { useState } from 'react';
 
 const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {

@@ -21,7 +21,7 @@ const SimpleNav = () => {
                     before:border-t-2 before:border-black before:transition before:duration-200 
                     hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 
                     hover:bg-transparent" 
-                    aria-label="Home"
+                    aria-label="Profile"
                     onClick={() => {
                         //Your navigation or render logic goes here
                      }}
@@ -106,7 +106,7 @@ const SimpleNav = () => {
                     before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                     before:border-t-2 before:border-black before:transition before:duration-200 
                     hover:before:border-b-2 hover:before:border-r-2 hover:scale-95" 
-                    aria-label="Home"
+                    aria-label="Profile"
                     onClick={() => {
                         //Your navigation or render logic goes here
                      }}
