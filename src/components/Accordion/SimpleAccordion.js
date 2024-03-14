@@ -76,11 +76,11 @@ const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
             aria-label={item.ariaLabel}
           >
 
-            <div className="text-sm sm:text-xl font-aldrich py-2 flex justify-between items-center hover:underline"
+            <div className="ml-2 text-sm sm:text-xl font-aldrich py-2 flex justify-between items-center hover:underline"
             style={{ color: headerColor }}>
               <span>{item.header}</span>
               <svg
-                className={`ml-6 w-6 h-6 transition-transform transform ${openIndex === index ? 'rotate-270' : ''}`}
+                className={`mr-2 w-6 h-6 transition-transform transform ${openIndex === index ? 'rotate-270' : ''}`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
