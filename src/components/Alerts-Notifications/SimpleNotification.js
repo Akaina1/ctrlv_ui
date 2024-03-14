@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 const SimpleNotification = ({ header, description, onClose, show, bgColor, ariaLabel }) => {
     
@@ -54,6 +55,19 @@ const SimpleNotification = ({ header, description, onClose, show, bgColor, ariaL
             </div>
         </div>
     );
+};
+
+SimpleNotification.propTypes = {
+  header: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+  show: PropTypes.bool.isRequired,
+  bgColor: PropTypes.string,
+  ariaLabel: PropTypes.string.isRequired,
+};
+
+SimpleNotification.defaultProps = {
+  bgColor: 'white',
 };
 
 export default SimpleNotification;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const SimpleScrollContainer = ({ title, bgColor }) => {
 
+  // Define the items array within component or use external file for larger data sets
   const items = [
     'Item 1',
     'Item 2',
@@ -36,7 +37,6 @@ const SimpleScrollContainer = ({ title, bgColor }) => {
 SimpleScrollContainer.propTypes = {
   title: PropTypes.string.isRequired,
   bgColor: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 SimpleScrollContainer.defaultProps = {

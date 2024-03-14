@@ -39,18 +39,28 @@ const handleSimpleToggleBox1 = (newState) => {
 const handleSimpleToggleBox2 = (newState) => {
   setToggleState(newState);
 };
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Simple Button Logic
   const SimpleButtonClick = () => {
     // do something when the button is clicked
-    console.log('Button clicked!');
+    console.log('Simple Button clicked!');
   };
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Card Button Logic 
+  const handleCardClick = () => {
+    // Your navigation or render logic goes here
+    console.log('Card Button clicked!');
+  };
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Social Button Logic
   const SocailButtonClick = () => {
     // do something when the button is clicked
-    console.log('Button clicked!');
+    console.log('Socail Button clicked!');
   };
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Notification Logic
 const NotificationClick = () => {
@@ -106,7 +116,7 @@ useEffect(() => {
               </div>
           </div>
 
-          {/* Custom SVG Icons (Non-button) */}
+          {/* Custom SVG Icons */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Custom SVG Icons</header>
               <div className="flex w-full h-full items-center justify-center">
@@ -198,6 +208,7 @@ useEffect(() => {
               button="IT'S ANOTHER BUTTON"
               buttonLabel="A button"
               bgColor='#FDFD96'
+              onButtonClick={handleCardClick}
             />
             </div>
           </div>
@@ -298,7 +309,7 @@ useEffect(() => {
 
           {/* Test Component # */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Alert</header>
             <div className="flex w-full h-full items-center justify-center">
 
            {/* Call with a button */}
@@ -345,23 +356,9 @@ useEffect(() => {
 
           {/* title */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Scroll Container</header>
             <div className="flex w-full h-full items-center justify-center">
-            <SimpleScrollContainer title="My Scrollable Content" bgColor="pink-200">
-              <div>Content goes here</div>
-              <div>More content goes here</div>
-              <div>Even more content goes here</div>
-              <div>Content goes here</div>
-              <div>More content goes here</div>
-              <div>Even more content goes here</div>
-              <div>Content goes here</div>
-              <div>More content goes here</div>
-              <div>Even more content goes here</div>
-              <div>Content goes here</div>
-              <div>More content goes here</div>
-              <div>Even more content goes here</div>
-              {/* Add more content as needed */}
-            </SimpleScrollContainer>
+              <SimpleScrollContainer title="My Scrollable Content" bgColor="pink-200"/>
             </div>
           </div>
 

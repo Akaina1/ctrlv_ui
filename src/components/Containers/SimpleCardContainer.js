@@ -1,22 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SimpleCard from '../Cards/SimpleCard'; // use my Simple card, or place your own card component here
 
 const SimpleCardContainer = ({ header, bgColor }) => {
   
   // Can define card array here or have a separate file holding it
   const cards = [
-    { photo: 'https://via.placeholder.com/400x400', title: 'This', description: 'Super Responsive!', button: 'I', bgColor: '#FF7A5C' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'Is', description: 'So Simple!', button: 'Really', bgColor: '#A388EE' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'A', description: 'I Love Cards!', button: 'Love', bgColor: '#90EE90' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'Card', description: 'Wow this text is cool!', button: 'Buttons', bgColor: '#E3A018' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'This', description: 'Super Responsive!', button: 'I', bgColor: '#FF7A5C' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'Is', description: 'So Simple!', button: 'Really', bgColor: '#A388EE' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'A', description: 'I Love Cards!', button: 'Love', bgColor: '#90EE90' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'Card', description: 'Wow this text is cool!', button: 'Buttons', bgColor: '#E3A018' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'This', description: 'Super Responsive!', button: 'I', bgColor: '#FF7A5C' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'Is', description: 'So Simple!', button: 'Really', bgColor: '#A388EE' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'A', description: 'I Love Cards!', button: 'Love', bgColor: '#90EE90' },
-    { photo: 'https://via.placeholder.com/400x400', title: 'Card', description: 'Wow this text is cool!', button: 'Buttons', bgColor: '#E3A018' },
+    { photo: 'https://via.placeholder.com/400x400', title: 'This', description: 'Super Responsive!', button: 'I', bgColor: '#FF7A5C', buttonLabel: "Card Button 1",  onButtonClick: () => { console.log('Button clicked on card 1!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'Is', description: 'So Simple!', button: 'Really', bgColor: '#A388EE', buttonLabel: "Card Button 2",  onButtonClick: () => { console.log('Button clicked on card 2!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'A', description: 'I Love Cards!', button: 'Love', bgColor: '#90EE90', buttonLabel: "Card Button 3",  onButtonClick: () => { console.log('Button clicked on card 3!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'Card', description: 'Wow this text is cool!', button: 'Buttons', bgColor: '#E3A018', buttonLabel: "Card Button 4",  onButtonClick: () => { console.log('Button clicked on card 4!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'This', description: 'Super Responsive!', button: 'I', bgColor: '#FF7A5C', buttonLabel: "Card Button 5",  onButtonClick: () => { console.log('Button clicked on card 5!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'Is', description: 'So Simple!', button: 'Really', bgColor: '#A388EE', buttonLabel: "Card Button 6",  onButtonClick: () => { console.log('Button clicked on card 6!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'A', description: 'I Love Cards!', button: 'Love', bgColor: '#90EE90', buttonLabel: "Card Button 7",  onButtonClick: () => { console.log('Button clicked on card 7!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'Card', description: 'Wow this text is cool!', button: 'Buttons', bgColor: '#E3A018', buttonLabel: "Card Button 8",  onButtonClick: () => { console.log('Button clicked on card 8!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'This', description: 'Super Responsive!', button: 'I', bgColor: '#FF7A5C', buttonLabel: "Card Button 9",  onButtonClick: () => { console.log('Button clicked on card 9!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'Is', description: 'So Simple!', button: 'Really', bgColor: '#A388EE', buttonLabel: "Card Button 10",  onButtonClick: () => { console.log('Button clicked on card 10!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'A', description: 'I Love Cards!', button: 'Love', bgColor: '#90EE90', buttonLabel: "Card Button 11",  onButtonClick: () => { console.log('Button clicked on card 11!');},},
+    { photo: 'https://via.placeholder.com/400x400', title: 'Card', description: 'Wow this text is cool!', button: 'Buttons', bgColor: '#E3A018', buttonLabel: "Card Button 12",  onButtonClick: () => { console.log('Button clicked on card 12!');},},
     // Add more card data as needed
   ];
 
@@ -35,6 +36,16 @@ const SimpleCardContainer = ({ header, bgColor }) => {
       </div>
     </div>
   );
+};
+
+SimpleCardContainer.propTypes = {
+  header: PropTypes.string,
+  bgColor: PropTypes.string,
+};
+
+SimpleCardContainer.defaultProps = {
+  header: '',
+  bgColor: 'white',
 };
 
 export default SimpleCardContainer;

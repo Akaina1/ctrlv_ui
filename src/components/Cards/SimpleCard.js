@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SimpleCard = ({ photo, title, description, button, buttonLabel, bgColor }) => {
+const SimpleCard = ({ photo, title, description, button, buttonLabel, bgColor, onButtonClick }) => {
   return (
     <div className={`border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-4`} style={{ backgroundColor: bgColor }}>
       <h2 className="text-black text-3xl font-bold mb-1 font-aldrich">{title}</h2>
@@ -15,14 +16,26 @@ const SimpleCard = ({ photo, title, description, button, buttonLabel, bgColor })
         before:border-t-2 before:border-black before:transition before:duration-200 
         hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 hover:bg-white hover:bg-opacity-20`} 
         aria-label={buttonLabel} 
-        onClick={() => {
-          // Your navigation or render logic goes here
-        }}
+        onClick={onButtonClick}
       >
         {button}
       </button>
     </div>
   );
+};
+
+SimpleCard.propTypes = {
+  photo: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  button: PropTypes.string.isRequired,
+  buttonLabel: PropTypes.string.isRequired,
+  bgColor: PropTypes.string,
+  onButtonClick: PropTypes.func.isRequired,
+};
+
+SimpleCard.defaultProps = {
+  bgColor: 'white',
 };
 
 export default SimpleCard;

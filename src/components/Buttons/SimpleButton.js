@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SimpleButton = ({ children, onClick, buttonLabel, href, bgColor }) => {
   const handleClick = (event) => {
@@ -23,6 +24,14 @@ const SimpleButton = ({ children, onClick, buttonLabel, href, bgColor }) => {
     {children}
     </a>
   );
+};
+
+SimpleButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+  buttonLabel: PropTypes.string.isRequired,
+  href: PropTypes.string,
+  bgColor: PropTypes.string.isRequired,
 };
 
 export default SimpleButton;

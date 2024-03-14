@@ -1,10 +1,10 @@
 // March-14-2024: Needs screen reader support on accordion content when shown
-
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
 
-  // Define the accordion items array within component or use external file
+  // Define the accordion items array within component or use external file for larger data sets
   const items = [
     {
       header: "This is a header you can click on!",
@@ -52,7 +52,6 @@ const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
   // Calculate the height of the accordion container based on the number of items - you can change this value to fit your needs
   const containerHeight = items.length * 100;
 
-
   // State to manage the visibility of each accordion item
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -77,7 +76,6 @@ const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
             aria-controls={`content-${index}`}
             aria-label={item.ariaLabel}
           >
-
             <div className="ml-2 text-sm sm:text-xl font-aldrich py-2 flex justify-between items-center hover:underline"
             style={{ color: headerColor }}>
               <span>{item.header}</span>
@@ -114,6 +112,18 @@ const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
       ))}
     </div>
   );
+};
+
+SimpleAccordion.propTypes = {
+  bgColor: PropTypes.string,
+  headerColor: PropTypes.string,
+  contentColor: PropTypes.string,
+};
+
+SimpleAccordion.defaultProps = {
+  bgColor: 'white',
+  headerColor: 'black',
+  contentColor: 'black',
 };
 
 export default SimpleAccordion;
