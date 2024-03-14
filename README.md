@@ -1,12 +1,8 @@
-# CTRLV-UI
+<img src="src/IMG/CTRVL_UI_LOGO.svg" alt="Project Logo" width="1000" height="500">
 
 ## Description
 
 A simple copy/paste solution for react components styled with TailwindCSS
-
-## Logo
-
-<img src="src/IMG/CTRVL_UI_LOGO.svg" alt="Project Logo" width="1000" height="500">
 
 ## Installation
 
