@@ -20,7 +20,8 @@ import ProfileIcon from './components/Icons/ProfileIcon';
 function App() {
   //States Required
   const [showNotification, setShowNotification] = useState(false); // for notifications
-  const [toggleState, setToggleState] = useState(true); //for simple toggle box
+  const [toggleState1, setToggleState1] = useState(true); //for simple toggle box 1
+  const [toggleState2, setToggleState2] = useState(true); //for simple toggle box 2
   const [showAlert, setShowAlert] = useState(false); // for simple Alert
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Alert Logic
@@ -31,14 +32,16 @@ const handleAlert1 = (selectedOption) => {
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Simple Toggle Box Logic
+// Simple Toggle Box Logic for Toggle 1
 const handleSimpleToggleBox1 = (newState) => {
-  setToggleState(newState);
+  setToggleState1(newState);
+  console.log("Toggle 1 State:", newState); // Log the updated state
 };
 
-// for multiple toggles
+// Simple Toggle Box Logic for Toggle 2
 const handleSimpleToggleBox2 = (newState) => {
-  setToggleState(newState);
+  setToggleState2(newState);
+  console.log("Toggle 2 State:", newState); // Log the updated state
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -297,7 +300,7 @@ const handleProfileClick = () => {
             <div className="flex flex-col w-full h-full items-center justify-center">
               <SimpleToggleBox
                 onToggle={handleSimpleToggleBox1}
-                initialState={toggleState}
+                initialState={toggleState1}
                 onLabel="Don't you hate when"
                 offLabel="Wait a minute, where's my sandwich?"
                 containerBackgroundColor="#EED6D3"
@@ -309,7 +312,7 @@ const handleProfileClick = () => {
 
               <SimpleToggleBox
                 onToggle={handleSimpleToggleBox2}
-                initialState={toggleState}
+                initialState={toggleState2}
                 onLabel="Your pet turtle eats your sandwiches?"
                 offLabel="Are you a turtle?"
                 containerBackgroundColor="#EED6D3"

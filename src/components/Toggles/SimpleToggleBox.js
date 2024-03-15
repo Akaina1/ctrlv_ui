@@ -21,8 +21,9 @@ const SimpleToggleBox = ({
   };
 
   return (
-    <div className='flex flex-col justify-start w-full'>
-      <div className="flex items-center">
+    <div className="flex flex-col md:flex-row justify-start items-center w-full mb-2">
+      {/* Toggle Container */}
+      <div className="flex items-center mb-2 md:mb-0">
         <div
           className="relative inline-block w-16 mr-2 select-none transition duration-200 ease-in border-l-2 border-t-2 border-r-4 border-b-4"
           onClick={handleToggle}
@@ -47,27 +48,27 @@ const SimpleToggleBox = ({
             style={{
               backgroundColor: toggleBackgroundColor,
               top: '50%',
-              right: '3px',
-              transform: `translateY(-50%) ${isToggled ? 'translateX(-31px)': ''}`,
+              left: '3px',
+              transform: `translateY(-50%) ${isToggled ? 'translateX(31px)': ''}`,
             }}
           >
             <span className="sr-only">{isToggled ? onLabel : offLabel}</span>
           </div>
         </div>
-        <div className="ml-2">
-          {isToggled && (
-            <div className="font-bold whitespace-nowrap font-julius-sans-one text-md"
-            style={{ color: toggleOnColor }}>
-              {onLabel}
-            </div>
-          )}
-          {!isToggled && (
-            <div className="font-bold whitespace-nowrap font-julius-sans-one text-md"
-            style={{ color: toggleOffColor }}>
+      </div>
+      
+      {/* On/Off Labels */}
+      <div className="ml-2">
+        {isToggled && (
+          <div className="font-bold font-julius-sans-one text-sm md:text-md" style={{ color: toggleOnColor }}>
+            {onLabel}
+          </div>
+        )}
+        {!isToggled && (
+          <div className="font-bold font-julius-sans-one text-sm md:text-md justify-center" style={{ color: toggleOffColor }}>
             {offLabel}
-            </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -81,6 +82,8 @@ SimpleToggleBox.propTypes = {
   containerBackgroundColor: PropTypes.string,
   containerBorderColor: PropTypes.string,
   toggleBackgroundColor: PropTypes.string,
+  toggleOffColor: PropTypes.string,
+  toggleOnColor: PropTypes.string,
 };
 
 SimpleToggleBox.defaultProps = {
@@ -90,6 +93,8 @@ SimpleToggleBox.defaultProps = {
   containerBackgroundColor: 'white',
   containerBorderColor: 'gray',
   toggleBackgroundColor: 'gray',
+  toggleOffColor: 'black',
+  toggleOnColor: 'black',
 };
 
 export default SimpleToggleBox;
