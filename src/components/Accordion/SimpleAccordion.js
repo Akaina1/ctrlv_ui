@@ -1,68 +1,17 @@
-// March-14-2024: Needs screen reader support on accordion content when shown
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
-
-  // Define the items array within component or use external file for larger data sets, then include as props
-  const items = [
-    {
-      header: "This is a header you can click on!",
-      content: "And this is the content you just found!",
-      ariaLabel: "Enter screen reader description here",
-    },
-    {
-      header: "This is ALSO a header!",
-      content: "WOW, more content!",
-      ariaLabel: "Enter screen reader description here",
-    },
-    {
-        header: "There is no content here...",
-        content: "gottem",
-        ariaLabel: "Enter screen reader description here",
-    },
-    {
-        header: "one larger header",
-        content: "and a side of content",
-        ariaLabel: "Enter screen reader description here",
-    },
-    {
-        header: "I needed to add more items",
-        content: "because testing",
-        ariaLabel: "Enter screen reader description here",
-    },
-    {
-        header: "I can't think of more copy",
-        content: "so here is random stuff",
-        ariaLabel: "Enter screen reader description here",
-    },
-    {
-        header: "this is getting long",
-        content: "too long...",
-        ariaLabel: "Enter screen reader description here",
-    },
-    {
-        header: "okay I am done now",
-        content: "enjoy this accordion",
-        ariaLabel: "Enter screen reader description here",
-    },       
-    // Add more items as needed
-  ];
-
-  // Calculate the height of the accordion container based on the number of items - you can change this value to fit your needs
+const SimpleAccordion = ({ bgColor, headerColor, contentColor, items }) => {
   const containerHeight = items.length * 100;
-
-  // State to manage the visibility of each accordion item
   const [openIndex, setOpenIndex] = useState(null);
 
-  // Function to toggle the visibility of an accordion item
   const toggleItem = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
     <div
-      className="w-4/5 border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-8 grid grid-cols-1 gap-2" // width can be changed as needed
+      className="w-4/5 border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-8 grid grid-cols-1 gap-2"
       style={{ backgroundColor: bgColor, height: `${containerHeight}px`, overflow: 'hidden' }}
     >
       {items.map((item, index) => (
@@ -77,7 +26,7 @@ const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
             aria-label={item.ariaLabel}
           >
             <div className="ml-2 text-sm sm:text-xl font-aldrich py-2 flex justify-between items-center hover:underline"
-            style={{ color: headerColor }}>
+              style={{ color: headerColor }}>
               <span>{item.header}</span>
               <svg
                 className={`mr-2 w-6 h-6 transition-transform transform ${openIndex === index ? 'rotate-270' : ''}`}
@@ -104,7 +53,7 @@ const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
             aria-hidden={openIndex !== index}
           >
             <div className="p-4 text-xl sm:text-2xl font-darker-grotesque"
-            style={{ color: contentColor }}>
+              style={{ color: contentColor }}>
               {item.content}
             </div>
           </div>
@@ -118,6 +67,13 @@ SimpleAccordion.propTypes = {
   bgColor: PropTypes.string,
   headerColor: PropTypes.string,
   contentColor: PropTypes.string,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      header: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      ariaLabel: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 SimpleAccordion.defaultProps = {

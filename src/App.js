@@ -13,6 +13,7 @@ import SimpleScrollContainer from './components/Containers/SimpleScrollContainer
 import ProfileIcon from './components/Icons/ProfileIcon';
 import SimpleBadge from './components/Icons/SimpleBadge';
 import BadgeContainer from './components/Containers/BadgeContainer';
+import * as TestData from './Data/TestData';
 
 
 function App() {
@@ -86,7 +87,7 @@ useEffect(() => {
   if (showNotification) {
     const timer = setTimeout(() => {
        setShowNotification(false);
-    }, 5000); // Set the duration here, in this case, 5 seconds
+    }, 5000555); // Set the duration here, in this case, 5 seconds
       return () => clearTimeout(timer);
     }
 }, [showNotification]);
@@ -247,6 +248,7 @@ const handleProfileClick2 = () => {
             <SimpleCardContainer 
             header="This is a super cool container for cards... and... stuff?"
             bgColor='#E3DFF2'
+            items={TestData.cardItems}
             />
             </div>
           </div>
@@ -259,6 +261,7 @@ const handleProfileClick2 = () => {
               bgColor='#A388EE'
               headerColor='black'
               contentColor='black'
+              items={TestData.accordionItems}
               />
             </div>
           </div>
@@ -391,6 +394,7 @@ const handleProfileClick2 = () => {
               bgColor="#D3BBDD"
               titleTextColor="black"
               itemTextColor="black"
+              items={TestData.scrollItems}
               />
             </div>
           </div>
@@ -431,7 +435,8 @@ const handleProfileClick2 = () => {
               <BadgeContainer 
               title="Super Cool & Responsive Container" 
               bgColor="#FFB067" 
-              titleColor="black" 
+              titleColor="black"
+              items={TestData.badgeItems} 
               />
             </div>
           </div>

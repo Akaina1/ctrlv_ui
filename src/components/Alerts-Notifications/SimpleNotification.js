@@ -23,7 +23,7 @@ const SimpleNotification = ({ header, description, onClose, show, bgColor, ariaL
             tabIndex="-1"
             role="alert"
             aria-live="assertive"
-            className="fixed top-0 right-0 z-50 p-12
+            className="fixed top-0 right-0 z-50 p-4 sm:p-14
             border-b-4 border-r-4 border-l-2 border-t-2 border-gray-800
             transition duration-500 ease-in-out transform origin-top 
             bg-opacity-90 animate-drop-down"
