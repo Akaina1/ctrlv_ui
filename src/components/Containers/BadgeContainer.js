@@ -62,14 +62,6 @@ BadgeContainer.propTypes = {
   bgColor: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   titleColor: PropTypes.string.isRequired,
-  badges: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      bgColor: PropTypes.string.isRequired,
-      textColor: PropTypes.string.isRequired,
-      icon: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default BadgeContainer;

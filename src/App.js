@@ -173,9 +173,9 @@ const handleProfileClick2 = () => {
           </div>
 
           {/* Social Button */}
-          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-center w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Social Media Link Buttons</header>
-            <div className="flex w-full h-full items-center justify-center">
+            <div className="flex w-full h-full items-center justify-evenly">
 
             <SocialButton
               ariaLabel="Facebook"
@@ -429,8 +429,8 @@ const handleProfileClick2 = () => {
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Badge Container</header>
             <div className="flex w-full h-full items-center justify-center">
               <BadgeContainer 
-              title="My Badges" 
-              bgColor="#D3BBDD" 
+              title="Super Cool & Responsive Container" 
+              bgColor="#FFB067" 
               titleColor="black" 
               />
             </div>
