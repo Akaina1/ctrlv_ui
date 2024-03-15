@@ -1,0 +1,12 @@
+export { default as Facebook } from './Facebook_1.svg';
+export { default as Instagram } from './Instagram_1.svg';
+export { default as Twitter } from './Twitter_1.svg';
+export { default as LinkedIn } from './LinkedIn_1.svg';
+export { default as Youtube } from './Youtube_1.svg';
+export { default as ProfileIcon } from './Profile_Default.svg';
+export {default as Verified_Badge} from './verified.svg';
+export {default as Python_Badge} from './python.svg';
+export {default as React_Badge} from './react.svg';
+export {default as CSS_Badge} from './css.svg';
+export {default as HTML_Badge} from './html.svg';
+export {default as JavaScript_Badge} from './js.svg';

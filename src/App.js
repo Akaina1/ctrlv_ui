@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import * as icons from './IMG';
 import SimpleNav from './components/NavBar/SimpleNav';
 import SimpleButton from './components/Buttons/SimpleButton';
-import Facebook from './IMG/Facebook_1.svg'
-import Instagram from './IMG/Instagram_1.svg'
-import Twitter from './IMG/Twitter_1.svg'
-import LinkedIn from './IMG/LinkedIn_1.svg'
-import Youtube from './IMG/Youtube_1.svg'
 import SocialButton from './components/Buttons/SocialButton';
 import SimpleCard from './components/Cards/SimpleCard';
 import SimpleCardContainer from './components/Containers/SimpleCardContainer';
@@ -15,6 +11,8 @@ import SimpleToggleBox from './components/Toggles/SimpleToggleBox';
 import SimpleAlert from './components/Alerts-Notifications/SimpleAlert';
 import SimpleScrollContainer from './components/Containers/SimpleScrollContainer';
 import ProfileIcon from './components/Icons/ProfileIcon';
+import SimpleBadge from './components/Icons/SimpleBadge';
+import BadgeContainer from './components/Containers/BadgeContainer';
 
 
 function App() {
@@ -96,9 +94,14 @@ useEffect(() => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Profile Icon Logic
 
-const handleProfileClick = () => {
+const handleProfileClick1 = () => {
   // Logic to handle profile icon click
-  console.log('Profile icon clicked');
+  console.log('Profile icon 1 clicked');
+};
+
+const handleProfileClick2 = () => {
+  // Logic to handle profile icon click
+  console.log('Profile icon 2 clicked');
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,24 +149,24 @@ const handleProfileClick = () => {
               <div className="flex w-full h-full items-center justify-center">
 
                 <div className="w-[400px] h-[400px] object-cover mr-4">
-                  <img src={Facebook} alt="Facebook logo" className="w-full h-full" />
+                  <img src={icons.Facebook} alt="Facebook logo" className="w-full h-full" />
                 </div>
 
                 <div className="w-[400px] h-[400px] object-cover mr-4">
-                  <img src={Twitter} alt="Logo" className="w-full h-full" />
+                  <img src={icons.Twitter} alt="Logo" className="w-full h-full" />
                 </div>
 
               
                 <div className="w-[400px] h-[400px] object-cover mr-4">
-                  <img src={Instagram} alt="Logo" className="w-full h-full" />
+                  <img src={icons.Instagram} alt="Logo" className="w-full h-full" />
                 </div>
 
                 <div className="w-[400px] h-[400px] object-cover mr-4">
-                  <img src={LinkedIn} alt="Logo" className="w-full h-full" />
+                  <img src={icons.LinkedIn} alt="Logo" className="w-full h-full" />
                 </div>
 
                 <div className="w-[400px] h-[400px] object-cover mr-4">
-                  <img src={Youtube} alt="Logo" className="w-full h-full" />
+                  <img src={icons.Youtube} alt="Logo" className="w-full h-full" />
                 </div>
 
             </div>
@@ -177,7 +180,7 @@ const handleProfileClick = () => {
             <SocialButton
               ariaLabel="Facebook"
               title="Facebook"
-              src={Facebook}
+              src={icons.Facebook}
               alt="Facebook logo"
               onClick={SocailButtonClick}
               href="https://www.facebook.com"
@@ -186,7 +189,7 @@ const handleProfileClick = () => {
             <SocialButton
               ariaLabel="Twitter"
               title="Twitter"
-              src={Twitter}
+              src={icons.Twitter}
               alt="Twitter logo"
               onClick={SocailButtonClick}
               href="https://www.Twitter.com"
@@ -195,7 +198,7 @@ const handleProfileClick = () => {
             <SocialButton
               ariaLabel="Instagram"
               title="Instagram"
-              src={Instagram}
+              src={icons.Instagram}
               alt="Instagram logo"
               onClick={SocailButtonClick}
               href="https://www.Instagram.com"
@@ -204,7 +207,7 @@ const handleProfileClick = () => {
             <SocialButton
               ariaLabel="LinkedIn"
               title="LinkedIn"
-              src={LinkedIn}
+              src={icons.LinkedIn}
               alt="LinkedIn logo"
               onClick={SocailButtonClick}
               href="https://www.LinkedIn.com"
@@ -213,7 +216,7 @@ const handleProfileClick = () => {
             <SocialButton
               ariaLabel="Youtube"
               title="Youtube"
-              src={Youtube}
+              src={icons.Youtube}
               alt="Youtube logo"
               onClick={SocailButtonClick}
               href="https://www.Youtube.com"
@@ -392,27 +395,44 @@ const handleProfileClick = () => {
             </div>
           </div>
 
-          {/* Profile Icon */}
+          {/* Profile Icon Button */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Profile Icon</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Profile Icon (button)</header>
             <div className="flex w-full h-full items-center justify-center">
-              <ProfileIcon onClick={handleProfileClick} />
+              <div className="flex flex-col items-center mr-8">
+                <div className="mb-2 text-sm font-semibold">Default</div> {/* Label for default icon */}
+                <ProfileIcon onClick={handleProfileClick1} bgColor="#FF6B6B" />
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="mb-2 text-sm font-semibold">Filled</div> {/* Label for filled icon */}
+                <ProfileIcon onClick={handleProfileClick2} photoUrl="https://i.pravatar.cc/80" bgColor="#FF6B6B" />
+              </div>
             </div>
           </div>
 
-          {/* title */}
+
+          {/* Simple Badge */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Badge</header>
             <div className="flex w-full h-full items-center justify-center">
-              <p>test</p>
+              <SimpleBadge 
+              title='Verified'
+              bgColor='#18A558'
+              textColor='black'
+              icon={icons.Verified_Badge}
+              />
             </div>
           </div>
 
-          {/* title */}
+          {/* Badge Container */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Badge Container</header>
             <div className="flex w-full h-full items-center justify-center">
-              <p>test</p>
+              <BadgeContainer 
+              title="My Badges" 
+              bgColor="#D3BBDD" 
+              titleColor="black" 
+              />
             </div>
           </div>
 
