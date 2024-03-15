@@ -10,3 +10,4 @@ export {default as React_Badge} from './react.svg';
 export {default as CSS_Badge} from './css.svg';
 export {default as HTML_Badge} from './html.svg';
 export {default as JavaScript_Badge} from './js.svg';
+export {default as Calendar} from './calendar.svg';

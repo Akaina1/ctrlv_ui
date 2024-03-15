@@ -14,6 +14,8 @@ import ProfileIcon from './components/Icons/ProfileIcon';
 import SimpleBadge from './components/Icons/SimpleBadge';
 import BadgeContainer from './components/Containers/BadgeContainer';
 import * as TestData from './Data/TestData';
+import SimpleCalendar from './components/Calendar/SimpleCalendar';
+import SimpleDateSelect from './components/Forms/SimpleDateSelect';
 
 
 function App() {
@@ -67,7 +69,7 @@ const handleSimpleToggleBox2 = (newState) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Social Button Logic
-  const SocailButtonClick = () => {
+  const SocialButtonClick = () => {
     // do something when the button is clicked
     console.log('Socail Button clicked!');
   };
@@ -87,7 +89,7 @@ useEffect(() => {
   if (showNotification) {
     const timer = setTimeout(() => {
        setShowNotification(false);
-    }, 5000555); // Set the duration here, in this case, 5 seconds
+    }, 5000); // Set the duration here, in this case, 5 seconds
       return () => clearTimeout(timer);
     }
 }, [showNotification]);
@@ -103,6 +105,16 @@ const handleProfileClick1 = () => {
 const handleProfileClick2 = () => {
   // Logic to handle profile icon click
   console.log('Profile icon 2 clicked');
+};
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Simple Calendar Logic
+const handleCalendarDateSelect = (date) => {
+  console.log("Selected date:", date);
+};
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Simple Date Select Logic
+const handleDateSelect = (date) => {
+  console.log("Selected date:", date);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -183,7 +195,7 @@ const handleProfileClick2 = () => {
               title="Facebook"
               src={icons.Facebook}
               alt="Facebook logo"
-              onClick={SocailButtonClick}
+              onClick={SocialButtonClick}
               href="https://www.facebook.com"
             />
 
@@ -192,7 +204,7 @@ const handleProfileClick2 = () => {
               title="Twitter"
               src={icons.Twitter}
               alt="Twitter logo"
-              onClick={SocailButtonClick}
+              onClick={SocialButtonClick}
               href="https://www.Twitter.com"
             />
 
@@ -201,7 +213,7 @@ const handleProfileClick2 = () => {
               title="Instagram"
               src={icons.Instagram}
               alt="Instagram logo"
-              onClick={SocailButtonClick}
+              onClick={SocialButtonClick}
               href="https://www.Instagram.com"
             />
 
@@ -210,7 +222,7 @@ const handleProfileClick2 = () => {
               title="LinkedIn"
               src={icons.LinkedIn}
               alt="LinkedIn logo"
-              onClick={SocailButtonClick}
+              onClick={SocialButtonClick}
               href="https://www.LinkedIn.com"
             />
 
@@ -219,7 +231,7 @@ const handleProfileClick2 = () => {
               title="Youtube"
               src={icons.Youtube}
               alt="Youtube logo"
-              onClick={SocailButtonClick}
+              onClick={SocialButtonClick}
               href="https://www.Youtube.com"
             />
             </div>
@@ -441,11 +453,28 @@ const handleProfileClick2 = () => {
             </div>
           </div>
 
-          {/* title */}
+          {/* Simple Calendar */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Calendar</header>
             <div className="flex w-full h-full items-center justify-center">
-              <p>test</p>
+              <SimpleCalendar 
+              bgColor="#F9EAC2" 
+              monthColor="black"
+              dayColor="black"
+              buttonColor="#E98973"
+              onDateSelect={handleCalendarDateSelect}
+              />
+            </div>
+          </div>
+
+          {/* Simple Date Select Form component */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Date Select</header>
+            <div className="flex w-full h-full items-center justify-center">
+              <SimpleDateSelect 
+              title={'Date Select'}
+              description={'Pick a date'}
+              onSubmit={handleDateSelect}/>
             </div>
           </div>
 
@@ -453,7 +482,55 @@ const handleProfileClick2 = () => {
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
             <div className="flex w-full h-full items-center justify-center">
-              <p>test</p>
+              {/* render component here */}
+              </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
             </div>
           </div>
 

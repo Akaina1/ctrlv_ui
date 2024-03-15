@@ -14,6 +14,7 @@ module.exports = {
 
       //custom breakpoints
       'navbar': '1160px', // edit this breakpoint if you change navbar for responsiveness
+      'fold': '281px',
     },
     extend: {},
   },
