@@ -63,10 +63,10 @@ const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, 
             <div>
               <SimpleCalendar 
               onDateSelect={handleDateSelect} 
-              bgColor='#6AABD2'
+              bgColor='#738FA7'
               dayColor='black'
-              buttonColor='#00A8A8'
-              previousMonthColor='gray'/>
+              buttonColor='#C3CEDA'
+              previousMonthColor='white'/>
             </div>
           )}
         </div>

@@ -473,7 +473,6 @@ const handleDateSelect = (date) => {
             <div className="flex w-full h-full items-center justify-center">
               <SimpleDateSelect 
               title={'Date Select'}
-              description={'Pick a date'}
               onSubmit={handleDateSelect}/>
             </div>
           </div>
