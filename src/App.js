@@ -175,7 +175,7 @@ const handleProfileClick2 = () => {
           {/* Social Button */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-center w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Social Media Link Buttons</header>
-            <div className="flex flex-col sm:flex-row space-y-4 space-x-4 sm:space-y-0">
+            <div className="flex flex-col sm:flex-row space-y-4 space-x-0 sm:space-y-0 sm:space-x-4">
 
             <SocialButton
               ariaLabel="Facebook"
