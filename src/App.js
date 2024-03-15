@@ -175,7 +175,7 @@ const handleProfileClick2 = () => {
           {/* Social Button */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-center w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Social Media Link Buttons</header>
-            <div className="flex w-full h-full items-center justify-evenly">
+            <div className="flex flex-col sm:flex-row space-y-4 space-x-4 sm:space-y-0">
 
             <SocialButton
               ariaLabel="Facebook"
@@ -229,7 +229,7 @@ const handleProfileClick2 = () => {
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Card</header>
             <div className="flex w-full h-full items-center justify-center">
             <SimpleCard
-              photo="https://via.placeholder.com/400x400"
+              photo="https://via.placeholder.com/300x300"
               title="SUPER COOL CARD"
               description="Incredible description of the card!"
               button="IT'S ANOTHER BUTTON"

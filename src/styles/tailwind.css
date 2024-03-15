@@ -70,12 +70,12 @@
   }
 
   /* Track */
-  .scrollbar-track-gray-300::-webkit-scrollbar-track {
+  .scrollbar-track-color::-webkit-scrollbar-track {
     background: transparent; /* Light gray */
   }
 
   /* Handle */
-  .scrollbar-thumb-gray-500::-webkit-scrollbar-thumb {
+  .scrollbar-thumb-color::-webkit-scrollbar-thumb {
     background: #6b7280; /* Dark gray */
   }
 

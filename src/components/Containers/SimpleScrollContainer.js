@@ -28,7 +28,7 @@ const SimpleScrollContainer = ({ title, bgColor, itemTextColor, titleTextColor }
         {title}
         </div>
       </div>
-      <div className={`flex-1 w-full overflow-y-auto scrollbar-thin scrollbar-track-gray-300 scrollbar-thumb-gray-500`}>
+      <div className={`flex-1 w-full overflow-y-auto scrollbar-thin scrollbar-track-color scrollbar-thumb-color`}>
         {items.map((item, index) => (
           <div key={index} className="p-4 border-b border-gray-200"
           style={{ color: itemTextColor }}

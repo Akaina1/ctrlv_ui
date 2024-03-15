@@ -62,7 +62,7 @@ const SimpleAccordion = ({ bgColor, headerColor, contentColor }) => {
 
   return (
     <div
-      className="w-full border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-8 grid grid-cols-1 gap-2"
+      className="w-4/5 border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-8 grid grid-cols-1 gap-2" // width can be changed as needed
       style={{ backgroundColor: bgColor, height: `${containerHeight}px`, overflow: 'hidden' }}
     >
       {items.map((item, index) => (
