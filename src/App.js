@@ -22,13 +22,21 @@ function App() {
   const [showNotification, setShowNotification] = useState(false); // for notifications
   const [toggleState1, setToggleState1] = useState(true); //for simple toggle box 1
   const [toggleState2, setToggleState2] = useState(true); //for simple toggle box 2
-  const [showAlert, setShowAlert] = useState(false); // for simple Alert
+  const [showAlert1, setShowAlert1] = useState(false); // for simple Alert1
+  const [showAlert2, setShowAlert2] = useState(false); // for simple Alert2
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Alert Logic
 const handleAlert1 = (selectedOption) => {
   // Do something with the selected option
   console.log(selectedOption);
-  setShowAlert(false);
+  setShowAlert1(false);
+};
+
+const handleAlert2 = (selectedOption) => {
+  // Do something with the selected option
+  console.log(selectedOption);
+  setShowAlert2(false);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -331,12 +339,12 @@ const handleProfileClick = () => {
 
            {/* Call with a button */}
             <button className='mr-6 border-2 border-black p-4'
-            onClick={() => setShowAlert(true)}>Show Alert</button>
-            {showAlert && (
+            onClick={() => setShowAlert1(true)}>Show Alert</button>
+            {showAlert1 && (
               <SimpleAlert
                 bgColor="red"
                 title="Warning"
-                description="Are you sure you want to do this?"
+                description="this is a SUPER important Alert!"
                 options={['Yes', 'No']}
                 onSelect={handleAlert1}
                 titleColor="#EFF1DB"
@@ -349,19 +357,19 @@ const handleProfileClick = () => {
             {/* Call with another component */}
             <SimpleButton
                 buttonLabel="Show Alert"
-                onClick={() => setShowAlert(true)}
+                onClick={() => setShowAlert2(true)}
                 bgColor="#BBE7FE"
                 textColor='#003060'
                 >
                 Show Alert
               </SimpleButton>
-              {showAlert && (
+              {showAlert2 && (
               <SimpleAlert
                 bgColor="#DB1F48"
-                title="Warning"
-                description="Are you sure you want to do this?"
+                title="Lesser Warning"
+                description="this is a less important Alert..."
                 options={['Yes', 'No']}
-                onSelect={handleAlert1}
+                onSelect={handleAlert2}
                 titleColor="#E5DDC8"
                 descriptionColor="#E5DDC8"
                 ButtonTextColor="#E5DDC8"
