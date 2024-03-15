@@ -19,7 +19,7 @@ const SimpleScrollContainer = ({ title, bgColor, itemTextColor, titleTextColor }
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 max-w-2xl max-h-96 m-auto border-black border-t-4 border-l-4 border-b-8 border-r-8" 
+    <div className="flex flex-col items-center justify-center p-6 max-w-2xl max-h-96 m-auto border-black border-t-2 border-l-2 border-b-4 border-r-4" 
     style={{ backgroundColor: bgColor }}>
       <div className="flex items-center justify-between w-full mb-4">
         <div className="text-lg font-medium"
