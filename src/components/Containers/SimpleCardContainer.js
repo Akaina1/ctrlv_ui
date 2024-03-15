@@ -5,7 +5,7 @@ import SimpleCard from '../Cards/SimpleCard'; // Assuming this is the correct pa
 const SimpleCardContainer = ({ header, bgColor, items }) => {
   
   return (
-    <div className="border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-4 w-full" // width can be changed as needed
+    <div className="border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-4 max-w-7xl" // width can be changed as needed
     style={{ backgroundColor: bgColor }}>
       {/* Header */}
       {header && <h1 className="text-black text-3xl font-bold text-center mb-4 font-michroma">
