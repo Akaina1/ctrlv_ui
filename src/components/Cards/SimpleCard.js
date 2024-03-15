@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const SimpleCard = ({ photo, title, description, button, buttonLabel, bgColor, onButtonClick }) => {
   return (
-    <div className={`border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-4 max-w-96 flex flex-col justify-between`} style={{ backgroundColor: bgColor }}>
+    <div className={`border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-4 max-w-80 flex flex-col justify-between`} style={{ backgroundColor: bgColor }}>
       <div>
         <h2 className="text-black text-3xl font-bold mb-1 font-aldrich">{title}</h2>
         <div className="flex justify-center">
