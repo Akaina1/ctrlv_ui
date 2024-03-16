@@ -24,19 +24,19 @@ const SimpleDateSelect = ({
   titleColor, 
   type = 'text', 
   isRequired,
-  value, 
   showButton }) => {
 
-    const [selectedDate, setSelectedDate] = useState(value || null); // Initialize selectedDate with the provided value or null
+    const [selectedDate, setSelectedDate] = useState(null); // Initialize selectedDate with the provided value or null
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
 
-    const handleDateChange = (id, dateString) => {
+    const handleDateChange = (id, value) => {
       // Call the onDateChange prop to update the selected date in the parent component
       if (onDateChange) {
-        onDateChange(id, dateString);
+        onDateChange(id, value);
       }
     };
+    
     const handleDateSelect = (date) => {
       setSelectedDate(date);
       setIsModalOpen(false);
@@ -145,7 +145,6 @@ SimpleDateSelect.propTypes = {
     isRequired: PropTypes.bool,
     showButton: PropTypes.bool,
     onDateChange: PropTypes.func,
-    value: PropTypes.string,
 };
 
 export default SimpleDateSelect;

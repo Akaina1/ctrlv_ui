@@ -21,21 +21,11 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   
   const handleFieldChange = (id, value) => {
-    if (id.startsWith('dateSelect')) {
-      // For date inputs, we'll update the fieldValues state with the selected date string
-      setFieldValues((prevFieldValues) => ({
-        ...prevFieldValues,
-        [id]: value,
-      }));
-    } else {
-      // For text inputs, we'll update the fieldValues state with the input value
-      setFieldValues((prevFieldValues) => ({
-        ...prevFieldValues,
-        [id]: value,
-      }));
-    }
+    setFieldValues(prevFieldValues => ({
+      ...prevFieldValues,
+      [id]: value,
+    }));
   };
-  
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -68,27 +58,17 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
     onSubmit({ ...fieldValues }); // Pass form data object to onSubmit
   };
 
+  
+
   const formChildren = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
-      const { id, type } = child.props;
+      const { type, id } = child.props;
       if (type === 'checkbox' && id) {
         const value = fieldValues[id] !== undefined ? fieldValues[id] : false;
         return React.cloneElement(child, {
           onChange: handleFieldChange,
           value: value,
         });
-      } else if (type === 'text') {
-        // For text inputs, we'll pass the onChange handler if it exists and the input is a date field
-        if (child.type.name === 'SimpleDateSelect') {
-          return React.cloneElement(child, {
-            onDateChange: (id, dateString) => handleFieldChange(id, dateString), // Pass the handleFieldChange function as a prop
-          });
-        } else {
-          return React.cloneElement(child, {
-            onChange: handleFieldChange,
-            value: fieldValues[id] !== undefined ? fieldValues[id] : '',
-          });
-        }
       } else {
         return React.cloneElement(child, {
           onChange: handleFieldChange,
