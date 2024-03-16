@@ -146,10 +146,6 @@ const handleFormSubmit = (fieldValues) => {
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // checkbox logic
-const handleCheckboxChange = (id, value) => {
-  console.log(`Checkbox ${id} checked: ${value}`);
-};
-
 const handleCheckboxSubmit = (isChecked, id) => {
   console.log(`Checkbox ${id} submitted with value: ${isChecked}`);
 };
@@ -158,7 +154,11 @@ const handleCheckboxSubmit = (isChecked, id) => {
 const handleFormSubmit2 = (formData) => {
   console.log('Form submitted with data:', formData);
 };
-
+// form data format:
+//  {
+//    "id": value,
+//    "id": "value"
+//  }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <div className="App bg-gray-700 flex flex-col min-h-screen min-w-screen overflow-y-auto items-center">
@@ -564,6 +564,7 @@ const handleFormSubmit2 = (formData) => {
             header="Wow a form!"
             onSubmit={handleFormSubmit}
             buttonColor="#81ABBC"
+            bgColor="#CB857C"
             >
               <SimpleTextField 
               id='Field1_ID'
@@ -594,7 +595,6 @@ const handleFormSubmit2 = (formData) => {
                 id="checkbox1"
                 label="Example Checkbox"
                 bgColor="#e0e0e0"
-                onChange={handleCheckboxChange}
                 onSubmit={handleCheckboxSubmit}
                 isRequired={true}
               />
@@ -605,7 +605,11 @@ const handleFormSubmit2 = (formData) => {
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Form Skeleton (text and boolean field)</header>
             <div className="flex w-full h-full items-center justify-center">
-            <FormSkeleton onSubmit={handleFormSubmit2} buttonColor="#81ABBC" header="Example Form">
+            <FormSkeleton 
+            onSubmit={handleFormSubmit2} 
+            buttonColor="#81ABBC" 
+            header="Sell your soul!"
+            bgColor="#774A62">
               <SimpleCheckbox
                 id="checkbox1"
                 label="I agree to the terms and conditions"
@@ -625,6 +629,38 @@ const handleFormSubmit2 = (formData) => {
                 textColor="white"
               />
             </FormSkeleton>
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
+            </div>
+          </div>
+
+          {/* test div */}
+          <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <div className="flex w-full h-full items-center justify-center">
+              {/* render component here */}
             </div>
           </div>
 

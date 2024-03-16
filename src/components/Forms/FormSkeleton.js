@@ -7,7 +7,7 @@ import SimpleAlert from '../Alerts-Notifications/SimpleAlert'; // for form valid
 
 // TODO: Responsive Design (mobile sizing)
 
-const FormSkeleton = ({ onSubmit, children, buttonColor, header }) => {
+const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
   const initialFieldValues = React.Children.toArray(children).reduce((acc, child) => {
     if (React.isValidElement(child)) {
       const { id, value } = child.props;
@@ -90,9 +90,10 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header }) => {
           ariaLabel="Incomplete Form Alert"
         />
       )}
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4 border-black border-l-2 border-t-2 border-r-4 border-b-4 p-4">
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-4 border-black border-l-2 border-t-2 border-r-4 border-b-4 p-4"
+      style={{ backgroundColor: bgColor }}>
         {header && (
-          <div className="text-center mb-4 font-rajdhani font-bold text-xl">
+          <div className="text-center mb-4 font-darker-grotesque font-bold text-2xl">
             {header}
           </div>
         )}
@@ -120,6 +121,7 @@ FormSkeleton.propTypes = {
   children: PropTypes.node.isRequired,
   buttonColor: PropTypes.string,
   header: PropTypes.node,
+  bgColor: PropTypes.string,
 };
 
 export default FormSkeleton;

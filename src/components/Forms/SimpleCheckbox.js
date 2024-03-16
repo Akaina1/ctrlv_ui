@@ -35,7 +35,7 @@ const SimpleCheckbox = ({
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center"> {/* Wrap label and input in a flex container */}
       {showAlert && (
         <SimpleAlert
           bgColor="red"
@@ -56,7 +56,7 @@ const SimpleCheckbox = ({
         value={value}  // Confirm that the value is coming from the state
         onChange={handleChange}
         style={{ backgroundColor: bgColor }}
-        className="p-2 border border-black focus:outline-1 focus:outline-blue-500"
+        className="form-checkbox h-6 w-6 text-blue-500 border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-0"
         aria-label={label}
       />
       {showButton && (
@@ -87,7 +87,7 @@ SimpleCheckbox.propTypes = {
   onSubmit: PropTypes.func,
   showButton: PropTypes.bool,
   isRequired: PropTypes.bool,
-  type: PropTypes.string, // Adding type prop
+  type: PropTypes.string, 
 };
 
 export default SimpleCheckbox;
