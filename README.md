@@ -42,6 +42,6 @@ Adding a new component to the CtrlV UI library is just as simple as using the li
 > Sit back, relax, and wait for a component review.
 >
 > 6. **Merge and Celebrate:**
-> If everything looks good, your new component will be merged into the main branch, ready to be copied and pasted by developers everywhere! Congratulations, you're now officially a part of the CtrlV UI family. Time to celebrate with some virtual high-fives and maybe a victory dance or two.
+> If everything looks good, your new component will be merged into the main branch, ready to be copied and pasted by developers everywhere! Congratulations!
 >
 > And that's it! You've successfully added a new component to the CtrlV UI library. Keep the creativity flowing and continue making the UI world a brighter and more playful place. Happy coding!
