@@ -27,7 +27,10 @@ const SimpleToggleBox = ({
       {/* Toggle Container */}
       <div className="flex items-center mb-2 md:mb-0">
         <div
-          className={`relative inline-block w-16 mr-2 select-none transition duration-200 ease-in border-l-2 border-t-2 border-r-4 border-b-4 ${!isToggled ? 'opacity-50' : ''}`}
+          className={`relative inline-block w-16 mr-2 select-none 
+          transition duration-200 ease-in 
+          border-l-2 border-t-2 border-r-4 border-b-4 cursor-pointer
+          ${!isToggled ? 'opacity-50' : ''}`}
           onClick={handleToggle}
           style={{
             backgroundColor: containerBackgroundColor,
