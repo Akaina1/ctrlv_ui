@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as icons from './IMG';
+import * as TestData from './Data/TestData';
 import SimpleNav from './components/NavBar/SimpleNav';
 import SimpleButton from './components/Buttons/SimpleButton';
 import SocialButton from './components/Buttons/SocialButton';
@@ -13,9 +14,9 @@ import SimpleScrollContainer from './components/Containers/SimpleScrollContainer
 import ProfileIcon from './components/Icons/ProfileIcon';
 import SimpleBadge from './components/Icons/SimpleBadge';
 import BadgeContainer from './components/Containers/BadgeContainer';
-import * as TestData from './Data/TestData';
 import SimpleCalendar from './components/Calendar/SimpleCalendar';
 import SimpleDateSelect from './components/Forms/SimpleDateSelect';
+import SimpleRadioGroup from './components/Buttons/SimpleRadioGroup';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
   const [toggleState2, setToggleState2] = useState(true); //for simple toggle box 2
   const [showAlert1, setShowAlert1] = useState(false); // for simple Alert1
   const [showAlert2, setShowAlert2] = useState(false); // for simple Alert2
+  const [selectedOption, setSelectedOption] = useState(''); // for simple radio group
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Alert Logic
@@ -115,6 +117,16 @@ const handleCalendarDateSelect = (date) => {
 // Simple Date Select Logic
 const handleDateSelect = (date) => {
   console.log("Selected date:", date);
+};
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Simple Radio Group Logic
+const handleRadioSelectionChange = (value) => {
+  setSelectedOption(value);
+};
+
+const handleRadioSubmit = () => {
+  // Handle form submission with selectedOption
+  console.log("Selected option:", selectedOption);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -477,11 +489,22 @@ const handleDateSelect = (date) => {
             </div>
           </div>
 
-          {/* title */}
+          {/* Simple Radio Group */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Radio Group</header>
             <div className="flex w-full h-full items-center justify-center">
-              {/* render component here */}
+            <SimpleRadioGroup
+                title="Choose the best programming language:"
+                titleTextColor="#EFDCF9"
+                bgColor="#7954A1"
+                items={['JavaScript', 'Python', 'COBOL', 'Java', 'C++', 'C#', 'Rust']} // options can be placed directly here or if there is a large list, use an external file
+                itemTextColor="#EFDCF9"
+                buttonTextColor="#EFDCF9"
+                selectionColor="#F6D4D2"
+                selection={selectedOption}
+                onSelectionChange={handleRadioSelectionChange}
+                onSubmit={handleRadioSubmit}
+              />
               </div>
           </div>
 

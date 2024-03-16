@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+// TODO: Accessibility features
+
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const SimpleCalendar = ({ bgColor, monthColor, dayColor, previousMonthColor, buttonColor, onDateSelect }) => {
@@ -142,7 +144,7 @@ const SimpleCalendar = ({ bgColor, monthColor, dayColor, previousMonthColor, but
 
   return (
     <div className="simple-calendar w-96 p-4 border-black 
-    border-l-2 border-t-2 border-r-4 border-b-4"
+    border-l-4 border-t-4 border-r-8 border-b-8"
     style={{ backgroundColor: bgColor }}>
       {renderCalendar()}
     </div>

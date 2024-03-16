@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SimpleCard from '../Cards/SimpleCard'; // Assuming this is the correct path to SimpleCard
+import SimpleCard from '../Cards/SimpleCard'; 
+
+// TODO: Accessibility features
 
 const SimpleCardContainer = ({ header, bgColor, items }) => {
   

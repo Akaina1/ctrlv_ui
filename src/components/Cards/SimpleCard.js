@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Accessibility features
+
 const SimpleCard = ({ photo, title, description, button, buttonLabel, bgColor, onButtonClick }) => {
   return (
     <div className={`border border-black border-t-4 border-l-4 border-b-8 border-r-8 p-4 max-w-80 flex flex-col justify-between`} style={{ backgroundColor: bgColor }}>

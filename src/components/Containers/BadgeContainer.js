@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SimpleBadge from '../Icons/SimpleBadge'; // Assuming this is the correct path to SimpleBadge
+import SimpleBadge from '../Icons/SimpleBadge'; 
+
+// TODO: Accessibility features
 
 const BadgeContainer = ({ bgColor, title, titleColor, items }) => {
 

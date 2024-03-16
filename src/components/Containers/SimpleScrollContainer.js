@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Accessibility features
+
 const SimpleScrollContainer = ({ title, bgColor, itemTextColor, titleTextColor, items }) => {
   return (
     <div className="flex flex-col items-center 

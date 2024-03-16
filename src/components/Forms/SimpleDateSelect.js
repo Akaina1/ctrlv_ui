@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import SimpleCalendar from '../Calendar/SimpleCalendar';
 import { ReactComponent as Calendar } from '../../IMG/calendar.svg';
 
+// TODO: Accessibility features
+
 const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, buttonTextColor, buttonColor, textBoxColor, titleColor }) => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,7 +52,7 @@ const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, 
             </button>
         </div>
         {/* Render the SimpleCalendar directly under the input field */}
-        <div ref={calendarRef} className={`absolute z-10 calendar-dropdown-animation ${isModalOpen ? 'show' : ''}`}> {/* Add absolute positioning and dropdown styles */}
+        <div ref={calendarRef} className={`absolute left-[-60px] z-10 calendar-dropdown-animation ${isModalOpen ? 'show' : ''}`}> {/* Add absolute positioning and dropdown styles */}
         <SimpleCalendar 
             onDateSelect={handleDateSelect}
             bgColor='#738FA7'
