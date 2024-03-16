@@ -38,7 +38,7 @@ const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, 
             {title}
             </h3>
         )}
-        <div className="relative border-black border-t-4 border-l-4 border-b-8 border-r-8 mb-2">
+        <div className="relative border-black border-t-4 border-l-4 border-b-8 border-r-8 w-70 sm:w-96">
             <input
             type="text"
             value={selectedDate ? selectedDate.toDateString() : ''}
@@ -52,7 +52,7 @@ const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, 
             </button>
         </div>
         {/* Render the SimpleCalendar directly under the input field */}
-        <div ref={calendarRef} className={`absolute left-[-60px] z-10 calendar-dropdown-animation ${isModalOpen ? 'show' : ''}`}> {/* Add absolute positioning and dropdown styles */}
+        <div ref={calendarRef} className={`absolute z-10 left-[-60px] sm:left-0 calendar-dropdown-animation ${isModalOpen ? 'show' : ''}`}> {/* Add absolute positioning and dropdown styles */}
         <SimpleCalendar 
             onDateSelect={handleDateSelect}
             bgColor='#738FA7'
@@ -69,7 +69,7 @@ const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, 
         {onSubmit && (
             <button
             className="relative font-julius-sans-one text-lg block 
-            navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
+            navbar:flex items-center px-4 py-2 mb-4 mt-2 navbar:mb-0 
             before:content-[''] before:absolute before:inset-0 
             before:border-b-4 before:border-r-4 before:border-l-2 
             before:border-t-2 before:border-black before:transition 
