@@ -140,8 +140,8 @@ const handleTextFieldSubmit = (value, id) => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Form Skeleton Logic (2 text fields)
 
-const handleFormSubmit = (fieldValues) => {
-  console.log('Submitted field values:', fieldValues);
+const handleFormSubmit = (formData) => {
+  console.log('Submitted field values:', formData);
   // You can handle the submitted field values here
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -159,6 +159,12 @@ const handleFormSubmit2 = (formData) => {
 //    "id": value,
 //    "id": "value"
 //  }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Form Skeleton Logic (text and date)
+
+const handleFormSubmit3 = (formData) => {
+  console.log('Form submitted with data:', formData);
+};
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <div className="App bg-gray-700 flex flex-col min-h-screen min-w-screen overflow-y-auto items-center">
@@ -514,8 +520,11 @@ const handleFormSubmit2 = (formData) => {
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Date Select</header>
             <div className="flex w-full h-full items-center justify-center">
               <SimpleDateSelect 
+              id='dateSelect1'
               title={'Date Select'}
-              onSubmit={handleDateSelect}/>
+              onSubmit={handleDateSelect}
+              isRequired={true}
+              showButton={true}/>
             </div>
           </div>
 
@@ -632,11 +641,31 @@ const handleFormSubmit2 = (formData) => {
             </div>
           </div>
 
-          {/* test div */}
+          {/* From Skeleton With date and text input */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
             <div className="flex w-full h-full items-center justify-center">
-              {/* render component here */}
+            <FormSkeleton onSubmit={handleFormSubmit3} buttonColor="#81ABBC" header="Sell your soul!" bgColor="#774A62">
+              <SimpleTextField
+                id="textField1"
+                label="Enter your name"
+                bgColor="#323E42"
+                onChange={() => {}}
+                showButton={false}
+                isRequired={true}
+                textColor="white"
+              />
+              <SimpleDateSelect
+                id="dateSelect2"
+                title="Select Date"
+                description="Please select a date"
+                buttonColor="#81ABBC"
+                textBoxColor="#323E42"
+                titleColor="#ffffff"
+                descriptionTextColor="#ffffff"
+                buttonTextColor="white"
+              />
+            </FormSkeleton>
             </div>
           </div>
 

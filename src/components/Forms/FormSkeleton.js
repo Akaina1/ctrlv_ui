@@ -19,11 +19,28 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
   const [fieldValues, setFieldValues] = useState(initialFieldValues);
   const [showAlert, setShowAlert] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  
+  const handleFieldChange = (id, value) => {
+    if (id.startsWith('dateSelect')) {
+      // For date inputs, we'll update the fieldValues state with the selected date string
+      setFieldValues((prevFieldValues) => ({
+        ...prevFieldValues,
+        [id]: value,
+      }));
+    } else {
+      // For text inputs, we'll update the fieldValues state with the input value
+      setFieldValues((prevFieldValues) => ({
+        ...prevFieldValues,
+        [id]: value,
+      }));
+    }
+  };
+  
 
-  const handleSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     setFormSubmitted(true);
-  
+
     // Form-level validation
     const requiredFields = React.Children.toArray(children)
       .filter(child => React.isValidElement(child) && child.props.isRequired)
@@ -31,7 +48,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
         id: child.props.id,
         type: child.props.type || 'text', // Default to 'text' if type is not provided
       }));
-  
+
     const incompleteFields = requiredFields.filter(field => {
       const fieldValue = fieldValues[field.id];
       if (field.type === 'text' && (!fieldValue || String(fieldValue).trim() === '')) {
@@ -42,31 +59,36 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
       }
       return false;
     });
-  
+
     if (incompleteFields.length > 0) {
       setShowAlert(true);
       return;
     }
-  
-    onSubmit(fieldValues);
-  };
 
-  const handleFieldChange = (id, value) => {
-    setFieldValues(prevFieldValues => ({
-      ...prevFieldValues,
-      [id]: value,
-    }));
+    onSubmit({ ...fieldValues }); // Pass form data object to onSubmit
   };
 
   const formChildren = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
-      const { type, id } = child.props;
+      const { id, type } = child.props;
       if (type === 'checkbox' && id) {
         const value = fieldValues[id] !== undefined ? fieldValues[id] : false;
         return React.cloneElement(child, {
           onChange: handleFieldChange,
           value: value,
         });
+      } else if (type === 'text') {
+        // For text inputs, we'll pass the onChange handler if it exists and the input is a date field
+        if (child.type.name === 'SimpleDateSelect') {
+          return React.cloneElement(child, {
+            onDateChange: (id, dateString) => handleFieldChange(id, dateString), // Pass the handleFieldChange function as a prop
+          });
+        } else {
+          return React.cloneElement(child, {
+            onChange: handleFieldChange,
+            value: fieldValues[id] !== undefined ? fieldValues[id] : '',
+          });
+        }
       } else {
         return React.cloneElement(child, {
           onChange: handleFieldChange,
@@ -76,7 +98,6 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
     }
     return child;
   });
-  
 
   return (
     <>
@@ -90,8 +111,8 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
           ariaLabel="Incomplete Form Alert"
         />
       )}
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-4 border-black border-l-2 border-t-2 border-r-4 border-b-4 p-4"
-      style={{ backgroundColor: bgColor }}>
+      <form onSubmit={handleFormSubmit} className="flex flex-col space-y-4 border-black border-l-2 border-t-2 border-r-4 border-b-4 p-4"
+        style={{ backgroundColor: bgColor }}>
         {header && (
           <div className="text-center mb-4 font-darker-grotesque font-bold text-2xl">
             {header}
@@ -99,7 +120,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
         )}
         {formChildren}
 
-        <button 
+        <button
           className="relative font-julius-sans-one text-lg lg:text-xl font-bold 
           text-black block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
           before:content-[''] before:absolute before:inset-0 before:border-b-4 
@@ -107,7 +128,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
           before:transition before:duration-200 hover:before:border-b-2 hover:before:border-r-2 
           hover:scale-95 hover:brightness-125"
           type="submit"
-          style={{ backgroundColor: buttonColor }} 
+          style={{ backgroundColor: buttonColor }}
         >
           Submit
         </button>
