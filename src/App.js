@@ -17,6 +17,8 @@ import BadgeContainer from './components/Containers/BadgeContainer';
 import SimpleCalendar from './components/Calendar/SimpleCalendar';
 import SimpleDateSelect from './components/Forms/SimpleDateSelect';
 import SimpleRadioGroup from './components/Buttons/SimpleRadioGroup';
+import SimpleTextField from './components/Forms/SimpleTextField';
+import FormSkeleton from './components/Forms/FormSkeleton';
 
 
 function App() {
@@ -127,6 +129,19 @@ const handleRadioSelectionChange = (value) => {
 const handleRadioSubmit = () => {
   // Handle form submission with selectedOption
   console.log("Selected option:", selectedOption);
+};
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Simple Text Field Logic
+const handleTextFieldSubmit = (value, id) => {
+  console.log('Submitted value:', value, 'from:', id);
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Form Skeleton Logic
+
+const handleFormSubmit = (fieldValues) => {
+  console.log('Submitted field values:', fieldValues);
+  // You can handle the submitted field values here
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -508,19 +523,44 @@ const handleRadioSubmit = () => {
               </div>
           </div>
 
-          {/* test div */}
+          {/* Simple Text Field */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Text Field</header>
             <div className="flex w-full h-full items-center justify-center">
-              {/* render component here */}
+              <SimpleTextField
+                id='SingleField'
+                bgColor="#323E42"
+                buttonColor="#81ABBC"
+                onSubmit={handleTextFieldSubmit}
+                showButton={true}
+                label="Text Field"
+                inputLimit={10}
+              />
             </div>
           </div>
 
           {/* test div */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Form Skeleton (2 text fields)</header>
             <div className="flex w-full h-full items-center justify-center">
-              {/* render component here */}
+            <FormSkeleton 
+            onSubmit={handleFormSubmit}
+            buttonColor="#81ABBC">
+              <SimpleTextField 
+              id='Field1_ID'
+              label="Field 1" 
+              showButton={false} 
+              bgColor={'#323E42'}
+              inputLimit={6}
+              />
+              <SimpleTextField 
+              id='Field2_ID'
+              label="Field 2" 
+              showButton={false} 
+              bgColor={'#323E42'}
+              inputLimit={5}
+              />
+            </FormSkeleton>
             </div>
           </div>
 
