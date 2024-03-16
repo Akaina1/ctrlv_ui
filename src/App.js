@@ -19,6 +19,7 @@ import SimpleDateSelect from './components/Forms/SimpleDateSelect';
 import SimpleRadioGroup from './components/Buttons/SimpleRadioGroup';
 import SimpleTextField from './components/Forms/SimpleTextField';
 import FormSkeleton from './components/Forms/FormSkeleton';
+import SimpleCheckbox from './components/Forms/SimpleCheckbox';
 
 
 function App() {
@@ -137,11 +138,25 @@ const handleTextFieldSubmit = (value, id) => {
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Form Skeleton Logic
+// Form Skeleton Logic (2 text fields)
 
 const handleFormSubmit = (fieldValues) => {
   console.log('Submitted field values:', fieldValues);
   // You can handle the submitted field values here
+};
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// checkbox logic
+const handleCheckboxChange = (id, value) => {
+  console.log(`Checkbox ${id} checked: ${value}`);
+};
+
+const handleCheckboxSubmit = (isChecked, id) => {
+  console.log(`Checkbox ${id} submitted with value: ${isChecked}`);
+};
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Form Skeleton Logic (checkbox and text)
+const handleFormSubmit2 = (formData) => {
+  console.log('Form submitted with data:', formData);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -535,48 +550,81 @@ const handleFormSubmit = (fieldValues) => {
                 showButton={true}
                 label="Text Field"
                 inputLimit={10}
+                isRequired={true}
+                textColor="white"
               />
             </div>
           </div>
 
-          {/* test div */}
+          {/* Form Skeleton with 2 text boxes */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Form Skeleton (2 text fields)</header>
             <div className="flex w-full h-full items-center justify-center">
             <FormSkeleton 
+            header="Wow a form!"
             onSubmit={handleFormSubmit}
-            buttonColor="#81ABBC">
+            buttonColor="#81ABBC"
+            >
               <SimpleTextField 
               id='Field1_ID'
               label="Field 1" 
               showButton={false} 
-              bgColor={'#323E42'}
+              bgColor="#323E42"
               inputLimit={6}
+              isRequired={true}
+              textColor="white"
               />
               <SimpleTextField 
               id='Field2_ID'
               label="Field 2" 
               showButton={false} 
-              bgColor={'#323E42'}
+              bgColor="#323E42"
               inputLimit={5}
+              textColor="white"
               />
             </FormSkeleton>
             </div>
           </div>
 
-          {/* test div */}
+          {/* Simple Checkbox */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Checkbox</header>
             <div className="flex w-full h-full items-center justify-center">
-              {/* render component here */}
+            <SimpleCheckbox
+                id="checkbox1"
+                label="Example Checkbox"
+                bgColor="#e0e0e0"
+                onChange={handleCheckboxChange}
+                onSubmit={handleCheckboxSubmit}
+                isRequired={true}
+              />
             </div>
           </div>
 
-          {/* test div */}
+          {/* Form Skeleton text and boolean */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Form Skeleton (text and boolean field)</header>
             <div className="flex w-full h-full items-center justify-center">
-              {/* render component here */}
+            <FormSkeleton onSubmit={handleFormSubmit2} buttonColor="#81ABBC" header="Example Form">
+              <SimpleCheckbox
+                id="checkbox1"
+                label="I agree to the terms and conditions"
+                bgColor="#e0e0e0"
+                onChange={() => {}}
+                isRequired={true}
+                showButton={false}
+                value={false}
+              />
+              <SimpleTextField
+                id="textField1"
+                label="Enter your name"
+                bgColor="#323E42"
+                onChange={() => {}}
+                showButton={false}
+                isRequired={false}
+                textColor="white"
+              />
+            </FormSkeleton>
             </div>
           </div>
 

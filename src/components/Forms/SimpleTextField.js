@@ -1,7 +1,25 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import SimpleAlert from '../Alerts-Notifications/SimpleAlert'; // Import the SimpleAlert component if not already imported
 
-const SimpleTextField = ({ id, label, bgColor, onChange, value, onSubmit, buttonColor, showButton = true, inputLimit }) => {
+// TODO: Accessibility features
+// for button: https://www.w3.org/WAI/ARIA/apg/patterns/button/
+// https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/ - this should be implemented in the SimpleAlert component
+
+const SimpleTextField = 
+({ id, 
+  label, 
+  bgColor, 
+  onChange, 
+  value,
+  textColor, 
+  onSubmit, 
+  buttonColor, 
+  showButton, 
+  inputLimit, 
+  isRequired, type = 'text' 
+}) => {
+  const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
   const [inputValue, setInputValue] = useState(value || '');
 
   const handleChange = (event) => {
@@ -17,6 +35,10 @@ const SimpleTextField = ({ id, label, bgColor, onChange, value, onSubmit, button
   };
 
   const handleSubmit = () => {
+    if (isRequired && inputValue.trim() === '') {
+      setShowAlert(true); // Show the alert if the field is required and the input value is empty
+      return;
+    }
     if (onSubmit) {
       onSubmit(inputValue, id);
     }
@@ -24,16 +46,26 @@ const SimpleTextField = ({ id, label, bgColor, onChange, value, onSubmit, button
 
   return (
     <div className="flex flex-col">
-      <label htmlFor={id} className="mb-2">
-        {label}
+      {showAlert && (
+        <SimpleAlert
+          bgColor="red"
+          title="Incomplete Field"
+          description="Please enter a value before submitting."
+          options={['OK']}
+          onSelect={() => setShowAlert(false)} // Hide the alert when the user clicks OK
+          ariaLabel="Incomplete Field Alert"
+        />
+      )}
+      <label htmlFor={id} className="mb-2 font-julius-sans-one font-bold">
+        {label} {isRequired && <span className="text-red-500">*</span>}
       </label>
       <input
-        type="text"
+        type={type}
         id={id}
         value={inputValue}
         onChange={handleChange}
-        style={{ backgroundColor: bgColor }}
-        className="p-2 border border-black focus:outline-1 focus:outline-blue-500"
+        style={{ backgroundColor: bgColor, color: textColor }}
+        className="p-2 border-l-2 border-t-2 border-r-4 border-b-4 border-black focus:outline-1 focus:outline-blue-500"
         aria-label={label}
         maxLength={inputLimit} // Set maxLength to enforce character limit
       />
@@ -65,7 +97,10 @@ SimpleTextField.propTypes = {
   onSubmit: PropTypes.func,
   showButton: PropTypes.bool,
   buttonColor: PropTypes.string,
+  textColor: PropTypes.string,
   inputLimit: PropTypes.number, // Define inputLimit prop
+  isRequired: PropTypes.bool, // Define isRequired prop
+  type: PropTypes.string, // Define type prop with possible value 'text'
 };
 
 export default SimpleTextField;
