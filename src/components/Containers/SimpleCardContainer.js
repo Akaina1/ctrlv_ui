@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import SimpleCard from '../Cards/SimpleCard'; 
 
 // TODO: Accessibility features
+// ARIA labels are implemented on each card
+// Should have a label for the container - maybe?
 
 const SimpleCardContainer = ({ header, bgColor, items }) => {
   

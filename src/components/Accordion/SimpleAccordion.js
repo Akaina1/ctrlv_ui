@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+
 const SimpleAccordion = ({ bgColor, headerColor, contentColor, items }) => {
   const containerHeight = items.length * 100;
   const [openIndex, setOpenIndex] = useState(null);

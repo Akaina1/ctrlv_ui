@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import defaultProfileIcon from '../../IMG/Profile_Default.svg'; // Import a default SVG image - one is provided or can import your own
 
+// TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/button/
+
 const ProfileIcon = ({ onClick, photoUrl, bgColor }) => {
   return (
     <div className="block">

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/radio/
 
 const SimpleRadioGroup = ({ title, titleTextColor, bgColor, items, itemTextColor, selection, onSelectionChange, buttonTextColor, onSubmit, selectionColor }) => {
 

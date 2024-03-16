@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/switch/
 
 const SimpleToggleBox = ({
   onToggle,

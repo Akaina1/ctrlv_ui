@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+
 const SimpleNotification = ({ header, description, onClose, show, bgColor, ariaLabel }) => {
     
     const notificationRef = useRef(null);

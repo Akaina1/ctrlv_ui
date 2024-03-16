@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/button/
+// https://www.w3.org/WAI/ARIA/apg/patterns/toolbar/
+// https://www.w3.org/WAI/ARIA/apg/patterns/menubar/
+
+// TODO: Might need a refactor to utilize the SimpleButton component - maybe?
+
 const SimpleNav = ({ bgColor, textColor }) => {
     return (
     <nav className="border-b-8 border-r-8 border-l-4 border-t-4 border-black p-4 sticky top-0 z-10 w-full"
@@ -37,7 +44,7 @@ const SimpleNav = ({ bgColor, textColor }) => {
 
                     {/* Copy + Paste buttons as needed [Remember to change navbar breakpoint in tailwind.config.js for responsive design] */}
                     <button className="relative 
-                        font-julius-sans-one text-2xl
+                        font-julius-sans-one text-2xl font-bold
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 
@@ -53,7 +60,7 @@ const SimpleNav = ({ bgColor, textColor }) => {
                     </button>
 
                     <button className="relative 
-                        font-julius-sans-one text-2xl
+                        font-julius-sans-one text-2xl font-bold
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 
@@ -69,7 +76,7 @@ const SimpleNav = ({ bgColor, textColor }) => {
                     </button>
 
                     <button className="relative 
-                        font-julius-sans-one text-2xl
+                        font-julius-sans-one text-2xl font-bold
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 
@@ -85,7 +92,7 @@ const SimpleNav = ({ bgColor, textColor }) => {
                     </button>
 
                     <button className="relative 
-                        font-julius-sans-one text-2xl
+                        font-julius-sans-one text-2xl font-bold
                         block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 
                         before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 
                         before:border-t-2 before:border-black before:transition before:duration-200 

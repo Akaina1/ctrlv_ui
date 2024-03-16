@@ -4,6 +4,11 @@ import SimpleCalendar from '../Calendar/SimpleCalendar';
 import { ReactComponent as Calendar } from '../../IMG/calendar.svg';
 
 // TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/
+// https://www.w3.org/WAI/ARIA/apg/patterns/menubar/
+// when user opens the calendar the calendar should be focused and each date should have a label and selectable (Done in the Calendar component)
+
+// TODO: change calendar size on mobile
 
 const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, buttonTextColor, buttonColor, textBoxColor, titleColor }) => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -52,7 +57,7 @@ const SimpleDateSelect = ({ title, description, onSubmit, descriptionTextColor, 
             </button>
         </div>
         {/* Render the SimpleCalendar directly under the input field */}
-        <div ref={calendarRef} className={`absolute z-10 left-[-60px] sm:left calendar-dropdown-animation ${isModalOpen ? 'show' : ''}`}> {/* Add absolute positioning and dropdown styles */}
+        <div ref={calendarRef} className={`absolute z-10 left-[-60px] sm:left-0 calendar-dropdown-animation ${isModalOpen ? 'show' : ''}`}> {/* Add absolute positioning and dropdown styles */}
         <SimpleCalendar 
             onDateSelect={handleDateSelect}
             bgColor='#738FA7'

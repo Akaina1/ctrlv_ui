@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/button/
+
 const SimpleButton = ({ children, onClick, buttonLabel, href, bgColor, textColor }) => {
   const handleClick = (event) => {
     event.preventDefault();
@@ -12,7 +15,7 @@ const SimpleButton = ({ children, onClick, buttonLabel, href, bgColor, textColor
   return (
     <a
       href={href || ""}
-      className="relative font-julius-sans-one text-md md:text-2xl text-black
+      className="relative font-julius-sans-one text-md md:text-2xl text-black font-bold
       block navbar:flex items-center px-6 py-4 mb-4 navbar:mb-0 before:content-['']
       before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2
       before:border-t-2 before:border-black before:transition before:duration-200 

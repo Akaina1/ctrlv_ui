@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Accessibility features
+// https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/
+// https://www.w3.org/WAI/ARIA/apg/patterns/alert/
+
 const SimpleAlert = ({
   bgColor,
   title,

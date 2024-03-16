@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 // TODO: Accessibility features
+// Might use standards for tables: https://www.w3.org/WAI/ARIA/apg/patterns/table/
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 

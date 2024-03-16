@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// NOTE: don't think this needs accessibility features but will revisit in the future
+
 const SimpleBadge = ({ title, icon, bgColor, textColor }) => {
   return (
     <div

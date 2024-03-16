@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SimpleBadge from '../Icons/SimpleBadge'; 
 
-// TODO: Accessibility features
+// TODO: Accessibility features - maybe? this component is just for displaying badges with no functionality
 
 const BadgeContainer = ({ bgColor, title, titleColor, items }) => {
 

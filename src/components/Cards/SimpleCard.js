@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // TODO: Accessibility features
+// Button: https://www.w3.org/WAI/ARIA/apg/patterns/button/
+// Figure out what other ARIA roles are needed
 
 const SimpleCard = ({ photo, title, description, button, buttonLabel, bgColor, onButtonClick }) => {
   return (
@@ -18,7 +20,14 @@ const SimpleCard = ({ photo, title, description, button, buttonLabel, bgColor, o
         <p className="mb-4 text-black text-xl font-aldrich">{description}</p>
       </div>
       <div className="flex justify-start"> {/* Ensure the button is always at the bottom */}
-        <button className={`relative font-julius-sans-one text-lg lg:text-xl text-black block navbar:flex items-center px-4 py-2 mb-4 navbar:mb-0 before:content-[''] before:absolute before:inset-0 before:border-b-4 before:border-r-4 before:border-l-2 before:border-t-2 before:border-black before:transition before:duration-200 hover:before:border-b-2 hover:before:border-r-2 hover:scale-95 hover:bg-white hover:bg-opacity-20`} aria-label={buttonLabel} onClick={onButtonClick}>
+        <button className={`relative font-julius-sans-one text-lg lg:text-xl font-bold
+        text-black block navbar:flex items-center px-4 py-2 mb-4 
+        navbar:mb-0 before:content-[''] before:absolute before:inset-0 
+        before:border-b-4 before:border-r-4 before:border-l-2 before:border-t-2 
+        before:border-black before:transition before:duration-200 hover:before:border-b-2 
+        hover:before:border-r-2 hover:scale-95 hover:bg-white hover:bg-opacity-20`} 
+        aria-label={buttonLabel} 
+        onClick={onButtonClick}>
           {button}
         </button>
       </div>
