@@ -10,7 +10,7 @@ Our mission? To provide developers with an easy-to-use and highly customizable s
 
 Embracing a Neo-Brutalist design style, CtrlV UI stands out with its bold, solid colors and sharp edges. Say goodbye to rounded corners – we're all about making a statement with our designs.
 
-But it's not just about looks – all CtrlV UI components adhere to WAI-ARIA design patterns, ensuring accessibility for all users. With CtrlV UI, you can create stunning, user-friendly interfaces without compromising on accessibility.
+But it's not just about looks – all CtrlV UI components adhere to WAI-ARIA design patterns, ensuring accessibility for all users. With CtrlV UI, you can create stunning, user-friendly interfaces without compromising on accessibility. [View more information here: https://www.w3.org/WAI/ARIA/apg/patterns/]
 
 So why wait? Dive into CtrlV UI today and unleash your creativity! Happy coding!
 
