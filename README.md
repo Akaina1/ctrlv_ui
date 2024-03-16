@@ -37,21 +37,27 @@ $ npm start
 Adding a new component to the CtrlV UI library is just as simple as using the library! Follow these simple steps to contribute your own component and make the UI even more awesome:
 
 > 1. **Install the Project:**
+>    
 > First things first, make sure you have the CtrlV UI project set up locally. If you haven't done so already, follow the [installation instructions](#installation) above.
 >
-> 2. **Create a New Branch:**
+> 3. **Create a New Branch:**
+>    
 > Branch out! No, not with leaves, but with a new branch in your Git repository. Create a new branch dedicated to your shiny new component. Give it a descriptive name!
 >
-> 3. **Get Creative:**
+> 5. **Get Creative:**
+>    
 > It's time to unleash your creativity! Craft your new component and remember to keep in line with accessibility standards and design practices that the library uses!
 >
-> 4. **Open Pull Request:**
+> 7. **Open Pull Request:**
+>    
 > Once your component is ready for the world to see, push your changes to your branch and open a pull request. Let us know what you've been up to!
 >
-> 5. **Review Time:**
+> 9. **Review Time:**
+>     
 > Sit back, relax, and wait for a component review.
 >
-> 6. **Merge and Celebrate:**
+> 11. **Merge and Celebrate:**
+>     
 > If everything looks good, your new component will be merged into the main branch, ready to be copied and pasted by developers everywhere! Congratulations!
 >
 > And that's it! You've successfully added a new component to the CtrlV UI library. Keep the creativity flowing and continue making the UI world a brighter and more playful place. Happy coding!
