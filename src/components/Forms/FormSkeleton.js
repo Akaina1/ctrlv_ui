@@ -51,7 +51,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
       //   console.log('checkbox field')
       //   return true; // Checkbox is required but unchecked
       // }
-      console.log('error');
+      console.log('error'); // always returns this on every submission
       return false;
     });
   

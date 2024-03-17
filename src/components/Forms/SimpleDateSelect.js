@@ -34,11 +34,9 @@ const SimpleDateSelect = ({
     const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
 
     const handleDateChange = (id, value) => {
-      console.log(id, value);
       // Call the onDateChange prop to update the selected date in the parent component
       if (onDateChange) {
         onDateChange(id, value);
-        console.log(id, value);
       }
     };
     const handleDateSelect = (date) => {
