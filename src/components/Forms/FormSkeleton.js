@@ -58,18 +58,20 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
     onSubmit({ ...fieldValues }); // Pass form data object to onSubmit
   };
 
-  
-
   const formChildren = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       const { type, id } = child.props;
+      // print all children, type and id:
+      // console.log(child);
       if (type === 'checkbox' && id) {
+        //console.log('Checkbox with id:', id);
         const value = fieldValues[id] !== undefined ? fieldValues[id] : false;
         return React.cloneElement(child, {
           onChange: handleFieldChange,
           value: value,
         });
       } else {
+        console.log('Text Field with id:', id);
         return React.cloneElement(child, {
           onChange: handleFieldChange,
           value: fieldValues[id] !== undefined ? fieldValues[id] : '',

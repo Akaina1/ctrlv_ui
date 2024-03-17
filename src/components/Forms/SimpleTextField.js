@@ -17,7 +17,8 @@ const SimpleTextField =
   buttonColor, 
   showButton, 
   inputLimit, 
-  isRequired, type = 'text' 
+  isRequired, 
+  type = 'text' 
 }) => {
   const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
   const [inputValue, setInputValue] = useState(value || '');

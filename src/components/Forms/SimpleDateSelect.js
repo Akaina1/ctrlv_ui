@@ -24,7 +24,7 @@ const SimpleDateSelect = ({
   buttonColor, 
   textBoxColor, 
   titleColor, 
-  type = 'text', 
+  type = 'textDate', 
   isRequired,
   showButton }) => {
 

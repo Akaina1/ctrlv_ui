@@ -627,9 +627,10 @@ const handleFormSubmit3 = (formData) => {
                 isRequired={true}
                 showButton={false}
                 value={false}
+                type={'checkbox'}
               />
               <SimpleTextField
-                id="textField1"
+                id="textField5"
                 label="Enter your name"
                 bgColor="#323E42"
                 onChange={() => {}}
@@ -664,6 +665,7 @@ const handleFormSubmit3 = (formData) => {
                 titleColor="#ffffff"
                 descriptionTextColor="#ffffff"
                 buttonTextColor="white"
+                type='textDate'
               />
             </FormSkeleton>
             </div>
