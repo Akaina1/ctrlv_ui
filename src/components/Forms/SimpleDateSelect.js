@@ -11,6 +11,8 @@ import SimpleAlert from '../Alerts-Notifications/SimpleAlert';
 
 // TODO: Change calendar size on mobile
 
+// TODO: Date Select does NOT work with FormSkeleton - id is passed correctly but value is always empty string for some reason
+
 const SimpleDateSelect = ({ 
   id,
   title, 
@@ -31,12 +33,13 @@ const SimpleDateSelect = ({
     const [showAlert, setShowAlert] = useState(false); // State to control alert visibility
 
     const handleDateChange = (id, value) => {
+      console.log(id, value);
       // Call the onDateChange prop to update the selected date in the parent component
       if (onDateChange) {
         onDateChange(id, value);
+        console.log(id, value);
       }
     };
-    
     const handleDateSelect = (date) => {
       setSelectedDate(date);
       setIsModalOpen(false);
@@ -51,7 +54,6 @@ const SimpleDateSelect = ({
       if (onSubmit) {
           onSubmit(selectedDate, id); // Pass the selected date to the onSubmit handler
       }
-      setSelectedDate(null); // Clear the input field when submitted if needed
   };
 
     const calendarRef = useRef(null);
