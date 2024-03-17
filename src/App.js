@@ -526,7 +526,8 @@ const handleFormSubmit3 = (formData) => {
               title={'Date Select'}
               onSubmit={handleDateSelect}
               isRequired={true}
-              showButton={true}/>
+              showButton={true}
+              inputColor="black"/>
             </div>
           </div>
 
@@ -629,7 +630,6 @@ const handleFormSubmit3 = (formData) => {
                 isRequired={true}
                 showButton={false}
                 value={false}
-                type={'checkbox'}
               />
               <SimpleTextField
                 id="textField5"

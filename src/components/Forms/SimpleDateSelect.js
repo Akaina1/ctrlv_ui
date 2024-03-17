@@ -22,7 +22,8 @@ const SimpleDateSelect = ({
   descriptionTextColor, 
   buttonTextColor, 
   buttonColor, 
-  textBoxColor, 
+  textBoxColor,
+  inputColor, 
   titleColor, 
   type = 'textDate', 
   isRequired,
@@ -90,8 +91,8 @@ const SimpleDateSelect = ({
                     type={type}
                     value={selectedDate ? selectedDate.toDateString() : ''}
                     readOnly
-                    className="bg-blue-200 text-white py-4 px-6 shadow-md w-full pr-12"
-                    style={{ backgroundColor: textBoxColor }}
+                    className="bg-blue-200 py-4 px-6 shadow-md w-full pr-12"
+                    style={{ backgroundColor: textBoxColor, color: inputColor }}
                 />
                 {/* Use the SVG calendar icon as the button */}
                 <button type="button" onClick={() => setIsModalOpen(!isModalOpen)} className="absolute inset-y-0 right-0 flex items-center px-2 border-l">
@@ -147,6 +148,7 @@ SimpleDateSelect.propTypes = {
     isRequired: PropTypes.bool,
     showButton: PropTypes.bool,
     onDateChange: PropTypes.func,
+    inputColor: PropTypes.string,
 };
 
 export default SimpleDateSelect;
