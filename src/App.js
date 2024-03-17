@@ -373,6 +373,7 @@ const handleFormSubmit3 = (formData) => {
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Simple Toggle Box</header>
             <div className="flex flex-col w-full h-full items-center justify-center">
               <SimpleToggleBox
+                id={"simple-toggle-box-1"}
                 onToggle={handleSimpleToggleBox1}
                 initialState={toggleState1}
                 onLabel="Don't you hate when"
@@ -385,6 +386,7 @@ const handleFormSubmit3 = (formData) => {
               />
 
               <SimpleToggleBox
+                id={"simple-toggle-box-2"}
                 onToggle={handleSimpleToggleBox2}
                 initialState={toggleState2}
                 onLabel="Your pet turtle eats your sandwiches?"
