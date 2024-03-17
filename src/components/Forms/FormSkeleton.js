@@ -61,17 +61,20 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
   const formChildren = React.Children.map(children, (child) => {
     if (React.isValidElement(child)) {
       const { type, id } = child.props;
-      // print all children, type and id:
-      // console.log(child);
       if (type === 'checkbox' && id) {
-        //console.log('Checkbox with id:', id);
         const value = fieldValues[id] !== undefined ? fieldValues[id] : false;
         return React.cloneElement(child, {
           onChange: handleFieldChange,
           value: value,
         });
+      } else if (type === 'textDate' && id) { // Add an else if statement for 'textDate'
+        //console.log('Text Date Field with id:', id);
+        return React.cloneElement(child, {
+          onDateChange: handleFieldChange, // Assuming onDateChange is the prop for date change
+          value: fieldValues[id] !== undefined ? fieldValues[id] : '',
+        });
       } else {
-        console.log('Text Field with id:', id);
+        //console.log('Text Field with id:', id);
         return React.cloneElement(child, {
           onChange: handleFieldChange,
           value: fieldValues[id] !== undefined ? fieldValues[id] : '',
@@ -79,7 +82,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
       }
     }
     return child;
-  });
+});
 
   return (
     <>

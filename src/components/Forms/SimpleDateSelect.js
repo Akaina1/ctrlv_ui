@@ -94,7 +94,7 @@ const SimpleDateSelect = ({
                     style={{ backgroundColor: textBoxColor }}
                 />
                 {/* Use the SVG calendar icon as the button */}
-                <button onClick={() => setIsModalOpen(!isModalOpen)} className="absolute inset-y-0 right-0 flex items-center px-2 border-l">
+                <button type="button" onClick={() => setIsModalOpen(!isModalOpen)} className="absolute inset-y-0 right-0 flex items-center px-2 border-l">
                     <Calendar className="h-5 w-5" /> {/* Adjust size as needed */}
                 </button>
             </div>
