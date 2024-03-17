@@ -32,7 +32,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
     setFormSubmitted(true);
   
     // Form-level validation is so broken that it works... I have no idea why, will figure it out later
-    // Textboxes are using the default type of 'text' for some reason and it works, so I'm leaving it as is.
+    // Checkboxes are using the default type of 'text' for some reason and it works, so I'm leaving it as is.
     // Manually setting a checkbox type to 'checkbox' breaks the validation logic for checkboxes
     const requiredFields = React.Children.toArray(children)
       .filter(child => React.isValidElement(child) && child.props.isRequired)
@@ -57,7 +57,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
   
     if (incompleteFields.length > 0) {
       setShowAlert(true);
-      return; // Add this return statement to prevent form submission
+      return; 
     } else {
       // Only call onSubmit if there are no incomplete fields
       onSubmit({ ...fieldValues }); // Pass form data object to onSubmit
