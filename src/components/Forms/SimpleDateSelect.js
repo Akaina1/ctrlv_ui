@@ -12,6 +12,7 @@ import SimpleAlert from '../Alerts-Notifications/SimpleAlert';
 // TODO: Change calendar size on mobile
 
 // TODO: Date Select does NOT work with FormSkeleton - id is passed correctly but value is always empty string for some reason
+// Update: Changing type to 'text' fixed issue, form now get's date correctly, but this should not be of type 'text' it should be a date, will review later
 
 const SimpleDateSelect = ({ 
   id,
@@ -25,7 +26,7 @@ const SimpleDateSelect = ({
   textBoxColor,
   inputColor, 
   titleColor, 
-  type = 'textDate', 
+  type = 'text', 
   isRequired,
   showButton }) => {
 

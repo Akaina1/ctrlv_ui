@@ -114,12 +114,12 @@ const handleProfileClick2 = () => {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Simple Calendar Logic
 const handleCalendarDateSelect = (date) => {
-  console.log("Selected date:", date);
+  console.log("Date Picked from Calendar:", date);
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Simple Date Select Logic
 const handleDateSelect = (date) => {
-  console.log("Selected date:", date);
+  console.log("Date Submitted:", date);
 };
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Simple Radio Group Logic
@@ -630,6 +630,7 @@ const handleFormSubmit3 = (formData) => {
                 isRequired={true}
                 showButton={false}
                 value={false}
+                // type='checkbox' // TODO: Figure out how to fix checkbox logic in SimpleCheckbox.js
               />
               <SimpleTextField
                 id="textField5"
