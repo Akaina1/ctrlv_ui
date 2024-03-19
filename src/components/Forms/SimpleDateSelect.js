@@ -25,7 +25,12 @@ const SimpleDateSelect = ({
   buttonColor, 
   textBoxColor,
   inputColor, 
-  titleColor, 
+  titleColor,
+  calendarbgColor,
+  calendarMonthcolor,
+  calendarDayColor,
+  calendarPrevMonthColor,
+  calendarButtonColor, 
   type = 'text', 
   isRequired,
   showButton }) => {
@@ -79,7 +84,7 @@ const SimpleDateSelect = ({
                 />
             )}
             {title && (
-            <h3 className='font-julius-sans-one text-lg' style={{ color: titleColor }}>
+            <h3 className='font-julius-sans-one font-bold' style={{ color: titleColor }}>
                 {title} {isRequired && <span className="text-red-500">*</span>}
             </h3>
             )}
@@ -102,10 +107,11 @@ const SimpleDateSelect = ({
             <div ref={calendarRef} className={`absolute z-10 left-[-60px] sm:left-0 calendar-dropdown-animation ${isModalOpen ? 'show' : ''}`}> {/* Add absolute positioning and dropdown styles */}
                 <SimpleCalendar
                     onDateSelect={handleDateSelect}
-                    bgColor='#738FA7'
-                    dayColor='black'
-                    buttonColor='#C3CEDA'
-                    previousMonthColor='white'
+                    bgColor={calendarbgColor}
+                    dayColor={calendarDayColor}
+                    buttonColor={calendarButtonColor}
+                    monthColor={calendarMonthcolor}
+                    previousMonthColor={calendarPrevMonthColor}
                 />
             </div>
             {description && (

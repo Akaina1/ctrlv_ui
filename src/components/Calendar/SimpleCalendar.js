@@ -66,7 +66,7 @@ const SimpleCalendar = ({ bgColor, monthColor, dayColor, previousMonthColor, but
     return (
         <div className="grid grid-cols-7 gap-1">
           {prevMonthDaysArray.map((day) => (
-            <div key={day} className="p-1 text-gray-400 text-center font-major-mono-display text-xs fold:text-sm"
+            <div key={day} className="p-1 text-gray-400 text-center font-major-mono-display text-xs fold:text-sm font-bold"
             style={{ color: previousMonthColor }}>
               {day}
             </div>
@@ -78,9 +78,9 @@ const SimpleCalendar = ({ bgColor, monthColor, dayColor, previousMonthColor, but
               <div
                 key={day}
                 className={`p-1 border text-center shadow-md font-major-mono-display text-xs fold:text-sm
-                   hover:bg-white hover:bg-opacity-40 hover:border-black
-                   ${isToday(day) ? "bg-[#ACEEF3] font-bold" : ""}
-                   ${isSelected(day) ? "bg-black bg-opacity-30 font-bold" : ""}
+                   hover:bg-white hover:bg-opacity-40 hover:border-black cursor-pointer font-bold
+                   ${isToday(day) ? "bg-[#ACEEF3] " : ""}
+                   ${isSelected(day) ? "bg-black bg-opacity-30" : ""}
                    ${borderClass}`}
                    onClick={() => {
                     setSelectedDate(new Date(year, month, day));

@@ -512,6 +512,7 @@ const handleFormSubmit3 = (formData) => {
               monthColor="black"
               dayColor="black"
               buttonColor="#E98973"
+              previousMonthColor="#B5B2B0"
               onDateSelect={handleCalendarDateSelect}
               />
             </div>
@@ -575,7 +576,7 @@ const handleFormSubmit3 = (formData) => {
             <FormSkeleton 
             header="Wow a form!"
             onSubmit={handleFormSubmit}
-            buttonColor="#81ABBC"
+            buttonColor="#00B1B0"
             bgColor="#CB857C"
             >
               <SimpleTextField 
@@ -619,7 +620,7 @@ const handleFormSubmit3 = (formData) => {
             <div className="flex w-full h-full items-center justify-center">
             <FormSkeleton 
             onSubmit={handleFormSubmit2} 
-            buttonColor="#81ABBC" 
+            buttonColor="#E88D72" 
             header="Sell your soul!"
             bgColor="#774A62">
               <SimpleCheckbox
@@ -649,7 +650,7 @@ const handleFormSubmit3 = (formData) => {
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Form Skeleton (date and text field)</header>
             <div className="flex w-full h-full items-center justify-center">
-            <FormSkeleton onSubmit={handleFormSubmit3} buttonColor="#81ABBC" header="Yet another form" bgColor="#774A62">
+            <FormSkeleton onSubmit={handleFormSubmit3} buttonColor="#8E8A92" header="Yet another form" bgColor="#BBA78C">
               <SimpleTextField
                 id="textField1"
                 label="Enter your favourite food"
@@ -667,6 +668,11 @@ const handleFormSubmit3 = (formData) => {
                 titleColor="#ffffff"
                 descriptionTextColor="#ffffff"
                 buttonTextColor="white"
+                calendarbgColor="#D6C099" 
+                calendarMonthColor="black"
+                calendarDayColor="black"
+                calendarButtonColor="#D6CEC0"
+                calendarPrevMonthColor="#8E8A92"
                 isRequired={true}
                 type='textDate'
               />
