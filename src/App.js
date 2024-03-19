@@ -630,7 +630,7 @@ const handleFormSubmit3 = (formData) => {
                 isRequired={true}
                 showButton={false}
                 value={false}
-                // type='checkbox' // TODO: Figure out how to fix checkbox logic in SimpleCheckbox.js
+                type='checkbox' 
               />
               <SimpleTextField
                 id="textField5"
@@ -638,7 +638,7 @@ const handleFormSubmit3 = (formData) => {
                 bgColor="#323E42"
                 onChange={() => {}}
                 showButton={false}
-                isRequired={false}
+                isRequired={true}
                 textColor="white"
               />
             </FormSkeleton>
@@ -649,10 +649,10 @@ const handleFormSubmit3 = (formData) => {
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
             <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
             <div className="flex w-full h-full items-center justify-center">
-            <FormSkeleton onSubmit={handleFormSubmit3} buttonColor="#81ABBC" header="Sell your soul!" bgColor="#774A62">
+            <FormSkeleton onSubmit={handleFormSubmit3} buttonColor="#81ABBC" header="Yet another form" bgColor="#774A62">
               <SimpleTextField
                 id="textField1"
-                label="Enter your name"
+                label="Enter your favourite food"
                 bgColor="#323E42"
                 onChange={() => {}}
                 showButton={false}
@@ -661,13 +661,13 @@ const handleFormSubmit3 = (formData) => {
               />
               <SimpleDateSelect
                 id="dateSelect2"
-                title="Select Date"
-                description="Please select a date"
+                title="Select a day"
                 buttonColor="#81ABBC"
                 textBoxColor="#323E42"
                 titleColor="#ffffff"
                 descriptionTextColor="#ffffff"
                 buttonTextColor="white"
+                isRequired={true}
                 type='textDate'
               />
             </FormSkeleton>

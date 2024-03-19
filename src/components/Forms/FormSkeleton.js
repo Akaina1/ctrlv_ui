@@ -31,27 +31,30 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
     event.preventDefault();
     setFormSubmitted(true);
   
-    // Form-level validation is so broken that it works... I have no idea why, will figure it out later
-    // Checkboxes are using the default type of 'text' for some reason and it works, so I'm leaving it as is.
-    // Manually setting a checkbox type to 'checkbox' breaks the validation logic for checkboxes
+    // Check if all required fields are filled
     const requiredFields = React.Children.toArray(children)
       .filter(child => React.isValidElement(child) && child.props.isRequired)
       .map(child => ({
         id: child.props.id,
-        type: child.props.type || (child.props.checked !== undefined ? 'checkbox' : 'text'), 
+        isRequired: child.props.isRequired,
+        type: (child.props.type !== undefined ? (child.props.type === 'textDate' ? 'textDate' : 'checkbox') : 'text'),
       }));
   
     const incompleteFields = requiredFields.filter(field => {
       const fieldValue = fieldValues[field.id];
-      if (field.type === 'text' && (!fieldValue || String(fieldValue).trim() === '')) {
-        console.log('text field')
+      if (field.type === 'text' && field.isRequired && (!fieldValue || String(fieldValue).trim() === '')) {
+        console.log('Field ID:', field.id, 'fieldValue:', fieldValue, 'fieldType:', field.type, 'fieldIsRequired:', field.isRequired);
         return true; // Text field is required but empty
       }
-      // if (field.type === 'checkbox' && field.isRequired && fieldValue !== true) {    // TODO: Figure out how to fix this and why it doesn't work
-      //   console.log('checkbox field')
-      //   return true; // Checkbox is required but unchecked
-      // }
-      console.log('error'); // always returns this on every submission
+      if (field.type === 'textDate' && field.isRequired && (!fieldValue || String(fieldValue).trim() === '')) {
+        console.log('Field ID:', field.id, 'fieldValue:', fieldValue, 'fieldType:', field.type, 'fieldIsRequired:', field.isRequired);
+        return true; // TextDate field is required but empty
+      }
+      if (field.type === 'checkbox' && field.isRequired && fieldValue !== true) {    
+        console.log('Field ID:', field.id, 'fieldValue:', fieldValue, 'fieldType:', field.type, 'fieldIsRequired:', field.isRequired);
+        return true; // Checkbox is required but unchecked
+      }
+      console.log('All required fields are filled'); // all required fields are filled, return false
       return false;
     });
   
@@ -75,7 +78,7 @@ const FormSkeleton = ({ onSubmit, children, buttonColor, header, bgColor }) => {
         });
       } else if (type === 'textDate' && id) { // Add an else if statement for 'textDate'
         return React.cloneElement(child, {
-          onDateChange: handleFieldChange, // Assuming onDateChange is the prop for date change
+          onDateChange: handleFieldChange, // onDateChange is the prop for date change
           value: fieldValues[id] !== undefined ? fieldValues[id] : '',
         });
       } else {
