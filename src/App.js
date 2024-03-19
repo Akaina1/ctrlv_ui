@@ -647,7 +647,7 @@ const handleFormSubmit3 = (formData) => {
 
           {/* From Skeleton With date and text input */}
           <div className="text-white bg-gray-600 p-4 flex flex-col items-center justify-top w-full h-full">
-            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">title</header>
+            <header className="text-white text-3xl font-bold mb-8 font-julius-sans-one">Form Skeleton (date and text field)</header>
             <div className="flex w-full h-full items-center justify-center">
             <FormSkeleton onSubmit={handleFormSubmit3} buttonColor="#81ABBC" header="Yet another form" bgColor="#774A62">
               <SimpleTextField
